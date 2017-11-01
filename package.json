@@ -5,7 +5,7 @@
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
   "keywords": [],
-  "main": "src/foundation/index.ts",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://www.github.com/sihotang/playst"
@@ -26,6 +26,6 @@
     "node": ">=6.9"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   }
 }

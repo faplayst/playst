@@ -1,0 +1,19 @@
+{
+  "name": "playst",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "main": "src/foundation/index.ts",
+  "devDependencies": {
+    "@types/react": "^16.0.19",
+    "@types/react-dom": "^16.0.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "typescript": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

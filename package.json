@@ -15,6 +15,9 @@
     "type": "git",
     "url": "https://www.github.com/sihotang/playst"
   },
+  "workspaces": [
+    "src/*"
+  ],
   "devDependencies": {
     "@types/jest": "^21.1.5",
     "@types/node": "^8.0.47",
@@ -22,11 +25,12 @@
     "@types/react-dom": "^16.0.2",
     "awesome-typescript-loader": "^3.3.0",
     "jest": "^21.2.1",
-    "npm-run-all": "false4.1.1",
+    "npm-run-all": "^4.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "ts-node": "false3.3.0",
+    "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
+    "tslint-react": "false3.2.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1"
   },
@@ -38,5 +42,9 @@
     "compile:source": "tsc -p src",
     "lint": "npm-run-all -p lint:source",
     "lint:source": "tslint --project src/tsconfig.json --format stylish"
-  }
+  },
+  "roots": [
+    "<rootDir>/src",
+    "<rootDir>/scripts"
+  ]
 }

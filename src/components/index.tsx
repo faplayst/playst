@@ -6,8 +6,4 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/** * @internal */
-export const IS_DEV = process.env.NODE_ENV === "development";
-
-/** * @internal */
-export const IS_PROD = process.env.NODE_ENV === "production";
+export { default as Button } from "./button";

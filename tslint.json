@@ -2,10 +2,15 @@
   "lintOptions": {
     "typeCheck": true
   },
-  "extends": "tslint:all",
+  "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
     // Don't want these
     "cyclomatic-complexity": false,
+    "jsx-boolean-value": [true, "never"],
+    "jsx-no-lamda": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-string-ref": false,
+    "jsx-wrap-multiline": false,
     "newline-before-return": false,
     "no-parameter-properties": false,
     "no-parameter-reassignment": false,

@@ -6,4 +6,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export { default as Components } from "./components";
+ import Button from "./button";
+
+ export default Button;

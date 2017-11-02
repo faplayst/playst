@@ -6,6 +6,11 @@
   "license": "MIT",
   "keywords": [],
   "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://www.github.com/sihotang/playst"
@@ -17,8 +22,11 @@
     "@types/react-dom": "^16.0.2",
     "awesome-typescript-loader": "^3.3.0",
     "jest": "^21.2.1",
+    "npm-run-all": "false4.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "ts-node": "false3.3.0",
+    "tslint": "^5.8.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1"
   },
@@ -26,6 +34,9 @@
     "node": ">=6.9"
   },
   "scripts": {
-    "build": "tsc"
+    "compile": "npm-run-all -p compile:source",
+    "compile:source": "tsc -p src",
+    "lint": "npm-run-all -p lint:source",
+    "lint:source": "tslint --project src/tsconfig.json --format stylish"
   }
 }

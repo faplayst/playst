@@ -8,11 +8,6 @@ node_js:
 env:
   matrix:
     - TEST_TYPE=lint
-    - TEST_TYPE=test:dist
-    - TEST_TYPE=test:lib
-    - TEST_TYPE=test:es
-    - TEST_TYPE=test:dom
-    - TEST_TYPE=test:node
 
 script:
   - |

@@ -21,6 +21,20 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
+import * as React from "react";
 
-export { default as Utilities } from "./Utilities";
+export interface IButtonProps {
+  name: string;
+}
+
+export class Button extends React.Component<IButtonProps, {}> {
+  constructor(props: IButtonProps) {
+    super(props);
+  }
+
+  public render() {
+    return (
+      <h1>{this.props.name}</h1>
+    );
+  }
+}

@@ -21,6 +21,4 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
-
-export { default as Utilities } from "./Utilities";
+ export { default as Component } from "./AbstractComponent";

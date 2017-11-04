@@ -57,7 +57,7 @@
     "interface-name": false,
     "file-header": [
       true,
-      "Copyright \\(c\\) \\d{4}, Sopar Sihotang. All rights reserved."
+      "Copyright \\(c\\) \\d{4}, Sopar Sihotang."
     ],
     "max-classes-per-file": false,
     "max-line-length": [

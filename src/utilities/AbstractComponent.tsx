@@ -21,6 +21,19 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
+import * as React from "react";
 
-export { default as Utilities } from "./Utilities";
+/**
+ * Interface Component Properties
+ *
+ * @public
+ */
+export interface IComponentProps {
+  reference?: (ref: React.ReactNode | null) => (void | React.ReactNode);
+}
+
+export abstract class Component<Props extends IComponentProps, Context = {}> extends React.Component<Props, Context> {
+  constructor(props?: Props, context?: Context) {
+    super(props, context);
+  }
+}

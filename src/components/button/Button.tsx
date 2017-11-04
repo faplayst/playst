@@ -21,13 +21,13 @@
  * SOFTWARE.
  */
 
-import * as React from "react";
+import { Component, IComponentProps } from "../../Utilities";
 
-export interface IButtonProps {
+export interface IButtonProps extends IComponentProps {
   name: string;
 }
 
-export class Button extends React.Component<IButtonProps, {}> {
+export class Button extends Component<IButtonProps, {}> {
   constructor(props: IButtonProps) {
     super(props);
   }

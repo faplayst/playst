@@ -21,4 +21,4 @@
  * SOFTWARE.
  */
 
- export { default as Component } from "./AbstractComponent";
+ export * from "./AbstractComponent";

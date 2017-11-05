@@ -21,6 +21,22 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
+import * as Foundation from "../../Foundation";
 
-export { default as Foundation } from "./Foundation";
+export interface IButtonProps extends Foundation.AbstractComponent {
+  name: string;
+}
+
+export class Button extends Component<IButtonProps, {}> {
+  constructor(props: IButtonProps) {
+    super(props);
+  }
+
+  public render() {
+    let props = this.props;
+
+    return (
+      <h1>{this.props.name}</h1>
+    );
+  }
+}

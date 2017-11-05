@@ -21,4 +21,32 @@
  * SOFTWARE.
  */
 
- export * from "./AbstractComponent";
+import { AllHTMLAttributes } from "react";
+import { Component, IComponentProps } from "../../Utilities";
+
+export enum ButtonType {
+  default = 0,
+  primary = 1,
+}
+
+export enum ElementType {
+  button = 0,
+  link = 1,
+}
+
+export interface IButton {
+  focus: () => void;
+}
+
+export interface IButtonProps extends AllHTMLAttributes<HTMLButtonElement | HTMLAnchorElement | Button> {
+  reference?: (component: IButton) => void;
+  href?: string;
+}
+
+export abstract class AbstractButton extends Component<IButtonProps, {}> {
+  constructor(props: IButtonProps) {
+    super(props);
+  }
+
+  public abstract render(): JSX.Element;
+}

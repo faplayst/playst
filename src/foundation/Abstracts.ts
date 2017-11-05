@@ -21,6 +21,4 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
-
-export { default as Foundation } from "./Foundation";
+export { default as AbstractComponent } from "./abstracts/AbstractComponent";

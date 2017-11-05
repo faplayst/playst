@@ -21,20 +21,4 @@
  * SOFTWARE.
  */
 
-import { Component, IComponentProps } from "../../Utilities";
-
-export interface IButtonProps extends IComponentProps {
-  name: string;
-}
-
-export class Button extends Component<IButtonProps, {}> {
-  constructor(props: IButtonProps) {
-    super(props);
-  }
-
-  public render() {
-    return (
-      <h1>{this.props.name}</h1>
-    );
-  }
-}
+export * from "./Abstracts";

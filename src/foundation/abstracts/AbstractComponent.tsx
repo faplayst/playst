@@ -20,3 +20,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+import * as React from "react";
+
+/**
+ * Interface Component Properties
+ *
+ * @public
+ */
+export interface IComponentProps {
+  reference?: (ref: React.ReactNode | null) => (void | React.ReactNode);
+}
+
+export default abstract class AbstractComponent<Props extends IComponentProps, Context = {}> extends React.Component<Props, Context> {
+  constructor(props?: Props, context?: Context) {
+    super(props, context);
+  }
+}

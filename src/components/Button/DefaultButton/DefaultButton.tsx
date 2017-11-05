@@ -21,4 +21,13 @@
  * SOFTWARE.
  */
 
-export * from "./utilities/index";
+import { AbstractButton, IButtonProps } from "../AbstractButton";
+import { Button } from "../Button";
+
+export class DefaultButton extends AbstractButton<IButtonProps, {}> {
+  public render() {
+    return (
+      <Button { ...this.props } />
+    );
+  }
+}

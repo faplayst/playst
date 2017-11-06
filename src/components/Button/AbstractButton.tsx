@@ -21,8 +21,9 @@
  * SOFTWARE.
  */
 
-import { HTMLProps } from "react";
+import * as React from "react";
 import * as Playst from "../../Playst";
+import { Button } from "./Button";
 
 export enum ButtonType {
   Default = 0,
@@ -33,15 +34,14 @@ export interface IButton {
   focus: () => void;
 }
 
-export interface IButtonProps extends Playst.IActionProps {
-  name: string;
-  type?: ButtonType;
+export interface IButtonProps extends React.AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
+  reference?: (component: IButton) => void;
 }
 
-export abstract class AbstractButton<T> extends Playst.Component<HTMLProps<T> & IButtonProps, {}> implements IButton {
+export abstract class AbstractButton extends Playst.Component<IButtonProps, {}> implements IButton {
   private _element: HTMLElement;
 
-  constructor(props: HTMLProps<T> & IButtonProps) {
+  constructor(props: IButtonProps) {
     super(props);
   }
 

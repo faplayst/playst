@@ -21,4 +21,14 @@
  * SOFTWARE.
  */
 
-export { default as Component, IComponentProps } from "./abstracts/AbstractComponent";
+import * as React from "react";
+
+export interface IComponentProps {
+  reference?: (ref: React.ReactNode | null) => (void | React.ReactNode);
+}
+
+export default abstract class Component<Props extends IComponentProps, Context = {}> extends React.Component<Props, Context> {
+  constructor(props?: Props, context?: Context) {
+    super(props, context);
+  }
+}

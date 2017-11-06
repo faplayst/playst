@@ -21,4 +21,6 @@
  * SOFTWARE.
  */
 
+export { default as Component, IComponentProps } from "./commons/AbstractComponent";
+
 export * from "./commons/IProps";

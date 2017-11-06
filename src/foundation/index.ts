@@ -21,6 +21,4 @@
  * SOFTWARE.
  */
 
-export * from "./Abstracts";
-
-export * from "./Props";
+export * from "./commons";

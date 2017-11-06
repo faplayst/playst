@@ -23,11 +23,12 @@
 
 import * as React from "react";
 
-export interface IComponentProps {
-  reference?: (ref: React.ReactNode | null) => (void | React.ReactNode);
+export interface IComponentProps<T, TReference> extends React.AllHTMLAttributes<HTMLElement | T> {
+  reference?: (ref: React.ReactNode | TReference | null) => (void | React.ReactNode);
 }
 
-export default abstract class Component<Props extends IComponentProps, Context = {}> extends React.Component<Props, Context> {
+export default abstract class Component<Props extends IComponentProps<HTMLElement, {}>, Context = {}> extends
+  React.Component<Props, Context> {
   constructor(props?: Props, context?: Context) {
     super(props, context);
   }

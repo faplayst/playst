@@ -21,7 +21,6 @@
  * SOFTWARE.
  */
 
-import * as React from "react";
 import * as Playst from "../../Playst";
 import { Button } from "./Button";
 
@@ -34,8 +33,8 @@ export interface IButton {
   focus: () => void;
 }
 
-export interface IButtonProps extends React.AllHTMLAttributes<HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
-  reference?: (component: IButton) => void;
+export interface IButtonProps extends Playst.IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button>  {
+  // reference?: (component: IButton) => void;
 }
 
 export abstract class AbstractButton extends Playst.Component<IButtonProps, {}> implements IButton {

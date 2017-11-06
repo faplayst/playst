@@ -23,7 +23,7 @@
 
 import { AbstractButton } from "../AbstractButton";
 
-export default class DefaultButton extends AbstractButton<HTMLButtonElement> {
+export default class DefaultButton extends AbstractButton {
   public render() {
     return (
       <AbstractButton {...this.props} />

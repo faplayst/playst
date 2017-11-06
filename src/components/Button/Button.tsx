@@ -24,7 +24,7 @@
 import { AbstractButton } from "./AbstractButton";
 import DefaultButton from "./DefaultButton/DefaultButton";
 
-export class Button extends AbstractButton<HTMLButtonElement> {
+export class Button extends AbstractButton {
   public render() {
     const props = this.props;
 

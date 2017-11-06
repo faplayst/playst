@@ -21,6 +21,7 @@
  * SOFTWARE.
  */
 
- import Button from "./Button";
-
- export default Button;
+export * from "./AbstractButton";
+export * from "./Button";
+export * from "./DefaultButton/DefaultButton";
+export * from "./PrimaryButton/PrimaryButton";

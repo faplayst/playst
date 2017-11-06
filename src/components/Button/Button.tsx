@@ -21,14 +21,17 @@
  * SOFTWARE.
  */
 
-import { AbstractButton } from "./AbstractButton";
+import { AbstractButton, ButtonType } from "./AbstractButton";
 import DefaultButton from "./DefaultButton/DefaultButton";
+import PrimaryButton from "./PrimaryButton/PrimaryButton";
 
 export class Button extends AbstractButton {
   public render() {
     const props = this.props;
 
-    switch (props.type) {
+    switch (props.buttonType) {
+      case ButtonType.Primary: return (<PrimaryButton {...props} />);
+      case ButtonType.Default:
       default: return (<DefaultButton {...props} />);
     }
   }

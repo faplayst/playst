@@ -21,6 +21,4 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
-
-export { default as Playst } from "./Playst";
+export * from "./commons/IProps";

@@ -22,3 +22,5 @@
  */
 
 export * from "./Abstracts";
+
+export * from "./Props";

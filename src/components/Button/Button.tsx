@@ -21,22 +21,15 @@
  * SOFTWARE.
  */
 
-import * as Foundation from "../../Foundation";
+import { AbstractButton } from "./AbstractButton";
+import DefaultButton from "./DefaultButton/DefaultButton";
 
-export interface IButtonProps extends Foundation.AbstractComponent {
-  name: string;
-}
-
-export class Button extends Component<IButtonProps, {}> {
-  constructor(props: IButtonProps) {
-    super(props);
-  }
-
+export class Button extends AbstractButton<HTMLButtonElement> {
   public render() {
-    let props = this.props;
+    const props = this.props;
 
-    return (
-      <h1>{this.props.name}</h1>
-    );
+    switch (props.type) {
+      default: return (<DefaultButton {...props} />);
+    }
   }
 }

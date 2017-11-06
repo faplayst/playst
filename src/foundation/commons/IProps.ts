@@ -21,6 +21,12 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
+import * as React from "react";
 
-export { default as Playst } from "./Playst";
+export interface IProps {
+  className?: string;
+}
+
+export interface IActionProps extends IProps {
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+}

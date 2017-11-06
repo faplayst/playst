@@ -21,13 +21,12 @@
  * SOFTWARE.
  */
 
-import { AbstractButton, IButtonProps } from "../AbstractButton";
-import { Button } from "../Button";
+import { AbstractButton } from "../AbstractButton";
 
-export class DefaultButton extends AbstractButton<IButtonProps, {}> {
+export default class DefaultButton extends AbstractButton<HTMLButtonElement> {
   public render() {
     return (
-      <Button { ...this.props } />
+      <AbstractButton {...this.props} />
     );
   }
 }

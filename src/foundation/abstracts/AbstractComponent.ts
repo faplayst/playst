@@ -21,6 +21,14 @@
  * SOFTWARE.
  */
 
-export { default as Components } from "./Components";
+import * as React from "react";
 
-export { default as Playst } from "./Playst";
+export interface IComponentProps {
+  componentRef?: (ref: React.ReactNode | null) => (void | React.ReactNode);
+}
+
+export default abstract class Component<Props extends IComponentProps, Context = {}> extends React.Component<Props, Context> {
+  constructor(props?: Props, context?: Context) {
+    super(props, context);
+  }
+}

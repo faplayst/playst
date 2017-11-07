@@ -35,11 +35,13 @@
     "file-loader": "^1.1.5",
     "glob": "^7.1.2",
     "glob-loader": "^0.3.0",
+    "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "ts-loader": "^3.1.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
+    "tslint-react": "^3.2.0",
     "typescript": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"

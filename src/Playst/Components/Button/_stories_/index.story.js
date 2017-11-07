@@ -27,10 +27,10 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
-import { Button, Welcome } from "@storybook/react/demo";
+import { DefaultButton } from "../DefaultButton/DefaultButton";
 
-storiesOf("Welcome", module).add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
+// storiesOf("Welcome", module).add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
 
 storiesOf("Button", module)
-  .add("with text", () => <Button onClick={action("clicked")}>Hello Button</Button>)
-  .add("with some emoji", () => <Button onClick={action("clicked")}>😀 😎 👍 💯</Button>);
+  .add("with text", () => <DefaultButton onClick={action("clicked")} />)
+  .add("with some emoji", () => <DefaultButton onClick={action("clicked")} />);

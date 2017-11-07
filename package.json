@@ -2,38 +2,35 @@
   "name": "playst",
   "private": true,
   "version": "0.0.1",
-  "description": "",
+  "description": "a Playst UI toolkit for building web.",
+  "repository": "git@github.com:sihotang/playst.git",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "ui",
+    "ui-toolkit",
+    "playst"
+  ],
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
   "files": [
-    "dist",
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://www.github.com/sihotang/playst"
-  },
   "workspaces": [
     "src/Playst/*"
   ],
   "devDependencies": {
-    "@types/jest": "^21.1.5",
-    "@types/node": "^8.0.47",
-    "@types/react": "^16.0.19",
+    "@types/node": "^8.0.49",
+    "@types/react": "^15.6.6",
     "@types/react-dom": "^16.0.2",
     "awesome-typescript-loader": "^3.3.0",
-    "jest": "^21.2.1",
     "npm-run-all": "^4.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.6.1",
-    "webpack": "^3.8.1"
+    "typescript": "^2.6.1"
   },
   "engines": {
     "node": ">=6.9"

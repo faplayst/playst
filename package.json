@@ -33,7 +33,9 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "engines": {
     "node": ">=6.9"
@@ -42,7 +44,8 @@
     "compile": "npm-run-all -p compile:source",
     "compile:source": "tsc -p src/Playst",
     "lint": "npm-run-all -p lint:source",
-    "lint:source": "tslint --project src/Playst/tsconfig.json --format stylish"
+    "lint:source": "tslint --project src/Playst/tsconfig.json --format stylish",
+    "start": "./scripts/start"
   },
   "roots": [
     "<rootDir>/src/Playst",

@@ -21,7 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "pretty": true,
-    "outDir": "../lib",
+    "outDir": "../../lib",
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
     "strict": true,
@@ -30,7 +30,7 @@
     "stripInternal": true,
     "target": "es6",
     "typeRoots": [
-      "../node_modules/@types"
+      "../../node_modules/@types"
     ],
     "types": [
       "node"

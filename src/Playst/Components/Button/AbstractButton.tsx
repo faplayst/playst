@@ -21,6 +21,33 @@
  * SOFTWARE.
  */
 
-export { default as Component, IComponentProps } from "./commons/AbstractComponent";
+import { Component } from "../../Commons";
+import { IComponentProps } from "../../Contracts";
+import { Button } from "./Button";
 
-export * from "./commons/IProps";
+export enum ButtonType {
+  Default = 0,
+  Primary = 1,
+}
+
+export interface IButton {
+  focus: () => void;
+}
+
+export interface IButtonProps extends IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
+  buttonType?: ButtonType;
+}
+
+export abstract class AbstractButton extends Component<IButtonProps, {}> implements IButton {
+  private _element: HTMLElement;
+
+  constructor(props: IButtonProps) {
+    super(props);
+  }
+
+  public abstract render(): JSX.Element;
+
+  public focus(): void {
+    this._element.focus();
+  }
+}

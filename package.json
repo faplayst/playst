@@ -1,5 +1,6 @@
 {
   "name": "playst",
+  "private": true,
   "version": "0.0.1",
   "description": "",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
@@ -16,7 +17,7 @@
     "url": "https://www.github.com/sihotang/playst"
   },
   "workspaces": [
-    "src/*"
+    "src/Playst/*"
   ],
   "devDependencies": {
     "@types/jest": "^21.1.5",
@@ -30,7 +31,7 @@
     "react-dom": "^16.0.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
-    "tslint-react": "false3.2.0",
+    "tslint-react": "^3.2.0",
     "typescript": "^2.6.1",
     "webpack": "^3.8.1"
   },
@@ -39,12 +40,12 @@
   },
   "scripts": {
     "compile": "npm-run-all -p compile:source",
-    "compile:source": "tsc -p src",
+    "compile:source": "tsc -p src/Playst",
     "lint": "npm-run-all -p lint:source",
-    "lint:source": "tslint --project src/tsconfig.json --format stylish"
+    "lint:source": "tslint --project src/Playst/tsconfig.json --format stylish"
   },
   "roots": [
-    "<rootDir>/src",
+    "<rootDir>/src/Playst",
     "<rootDir>/scripts"
   ]
 }

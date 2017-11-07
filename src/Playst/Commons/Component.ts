@@ -21,4 +21,12 @@
  * SOFTWARE.
  */
 
-export * from "./foundation/index";
+import * as React from "react";
+import { IComponentProps } from "../Contracts";
+
+export default abstract class Component<Props extends IComponentProps<HTMLElement, {}>, Context = {}> extends
+  React.Component<Props, Context> {
+  constructor(props?: Props, context?: Context) {
+    super(props, context);
+  }
+}

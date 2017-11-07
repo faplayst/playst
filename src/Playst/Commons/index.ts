@@ -21,4 +21,4 @@
  * SOFTWARE.
  */
 
-export * from "./commons";
+export { default as Component } from "./Component";

@@ -21,12 +21,6 @@
  * SOFTWARE.
  */
 
-import * as React from "react";
-
-export interface IProps {
-  className?: string;
-}
-
-export interface IActionProps extends IProps {
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-}
+export { default as Commons } from "./Commons";
+export { default as Components } from "./Components";
+export { default as Contracts } from "./Contracts";

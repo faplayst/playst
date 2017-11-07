@@ -21,4 +21,6 @@
  * SOFTWARE.
  */
 
-export { default as components } from "./components/index";
+export { default as IProps } from "./IProps";
+export { default as IActionProps } from "./IActionProps";
+export { default as IComponentProps } from "./IComponentProps";

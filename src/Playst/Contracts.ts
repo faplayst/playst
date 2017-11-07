@@ -21,32 +21,4 @@
  * SOFTWARE.
  */
 
-import * as Playst from "../../Playst";
-import { Button } from "./Button";
-
-export enum ButtonType {
-  Default = 0,
-  Primary = 1,
-}
-
-export interface IButton {
-  focus: () => void;
-}
-
-export interface IButtonProps extends Playst.IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button>  {
-  buttonType?: ButtonType;
-}
-
-export abstract class AbstractButton extends Playst.Component<IButtonProps, {}> implements IButton {
-  private _element: HTMLElement;
-
-  constructor(props: IButtonProps) {
-    super(props);
-  }
-
-  public abstract render(): JSX.Element;
-
-  public focus(): void {
-    this._element.focus();
-  }
-}
+export * from "./Contracts/index";

@@ -21,15 +21,6 @@
  * SOFTWARE.
  */
 
-import * as React from "react";
-
-export interface IComponentProps<T, TReference> extends React.AllHTMLAttributes<HTMLElement | T> {
-  reference?: (ref: React.ReactNode | TReference | null) => (void | React.ReactNode);
-}
-
-export default abstract class Component<Props extends IComponentProps<HTMLElement, {}>, Context = {}> extends
-  React.Component<Props, Context> {
-  constructor(props?: Props, context?: Context) {
-    super(props, context);
-  }
+export default interface IProps {
+  className?: string;
 }

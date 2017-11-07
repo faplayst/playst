@@ -1,0 +1,12 @@
+{
+  "name": "@playst/tools",
+  "version": "0.0.1",
+  "description": "a Playst tools for building resources UI Kit of Playst.",
+  "main": "index.js",
+  "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}

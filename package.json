@@ -53,8 +53,8 @@
     "compile": "npm-run-all -p compile:source",
     "compile:source": "tsc -p src/Playst",
     "lint": "npm-run-all -p lint:source",
-    "lint:source": "tslint --project src/Playst/tsconfig.json --format stylish",
-    "start": "./scripts/start"
+    "lint:source": "tslint -c src/Playst/tslint.json --project src/Playst/tsconfig.json --format stylish",
+    "start": "./scripts/bin/playst start"
   },
   "roots": [
     "<rootDir>/src/Playst",

@@ -10,7 +10,7 @@
     "lib"
   ],
   "bin": {
-    "playst": "./bin/playst"
+    "playst-task": "./bin/task"
   },
   "scripts": {
     "build": "babel src --out-dir lib",

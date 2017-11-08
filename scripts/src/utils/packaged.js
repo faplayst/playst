@@ -21,19 +21,18 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import gulp from 'gulp';
-import start from './start';
+import path from 'path';
+import {
+  existsSync,
+  readFileSync,
+} from 'fs';
 
-gulp.task('build', () => {
-  build([]);
-});
+export default function packaged() {
+  const filepath = path.resolve(process.cwd(), 'package.json');
 
-gulp.task('clean', () => {
-  clean();
-});
+  if (existsSync(filepath)) {
+    return JSON.parse(readFileSync(filepath, 'utf8'));
+  }
 
-gulp.task('start', () => {
-  start();
-});
+  return undefined;
+}

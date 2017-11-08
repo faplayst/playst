@@ -21,16 +21,25 @@
  * SOFTWARE.
  */
 
+"use strict";
+
 import path from 'path';
 import { execSync } from '../sync';
 
-export default function tslint(options) {
-  const rules = path.dirname(require.resolve('tslint-microsoft-contrib'));
+module.exports = (options) => {
+  const mstslint = require.resolve('tslint-microsoft-contrib');
+  // console.log(mstslint);
+  // const mstslint = path.resolve(__dirname, '../node_modules/@microsoft/lib/tslint-microsoft-contrib');
+  // console.log(mstslint);
+  const rules = path.dirname(mstslint);
+
+  // console.log(rules);
+
   const project = path.resolve(process.cwd(), 'tsconfig.json');
   const source = path.resolve(process.cwd(), 'src/**/*.ts*');
   const tslintCLI = path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
   const command = `node ${tslintCLI}`;
 
-  execSync(`${command} -c ${source} --project ${project} -t stylish -r ${rules} ${options}`);
+  execSync(`${command} -c ${source} --project ${project} -t stylish -r ${rules}`);
 }
 

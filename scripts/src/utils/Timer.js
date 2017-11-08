@@ -21,19 +21,31 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import gulp from 'gulp';
-import start from './start';
+import chalk from 'chalk';
 
-gulp.task('build', () => {
-  build([]);
-});
+class Timer {
+  static duration(start) {
+    const duration = new Date().getTime() - start;
 
-gulp.task('clean', () => {
-  clean();
-});
+    return chalk.yellow(this.formatTime(duration));
+  }
 
-gulp.task('start', () => {
-  start();
-});
+  static passFail(passed) {
+    return passed ? chalk.green('Pass') : chalk.red('Error');
+  }
+
+  static prefixTime(prefix) {
+    return `[${chalk.magenta(prefix)} \
+      ${chalk.gray(new Date().toLocaleTimeString({ hour12: false }))}]`;
+  }
+
+  static formatTime(milliseconds) {
+    if (milliseconds >= 1000) {
+      return `${(milliseconds / 1000)}s`;
+    }
+
+    return `${milliseconds}ms`;
+  }
+}
+
+export default Timer;

@@ -21,19 +21,11 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import gulp from 'gulp';
-import start from './start';
+import storybook from './storybook';
+import tslint from './tslint';
 
-gulp.task('build', () => {
-  build([]);
-});
+export {
+  storybook,
+  tslint,
+};
 
-gulp.task('clean', () => {
-  clean();
-});
-
-gulp.task('start', () => {
-  start();
-});

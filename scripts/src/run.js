@@ -26,12 +26,12 @@ import {
 } from 'colorful';
 import commander from 'commander';
 import gulp from 'gulp';
-import logger from './logger';
+import { Logger } from './utils';
 
 colorful();
 
 commander.on('--help', () => {
-  logger('  Usage:'.to.bold.blue.color);
+  Logger.stats('  Usage:'.to.bold.blue.color);
 });
 
 commander.parse(process.argv);
@@ -41,7 +41,7 @@ const task = commander.args[0];
 if (!task) {
   commander.help();
 } else {
-  logger('playst-tools run', task);
+  Logger.stats('playst-tools run', task);
 
   require('./gulpfile');
 

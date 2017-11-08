@@ -21,19 +21,5 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import gulp from 'gulp';
-import start from './start';
-
-gulp.task('build', () => {
-  build([]);
-});
-
-gulp.task('clean', () => {
-  clean();
-});
-
-gulp.task('start', () => {
-  start();
-});
+export const isProduction = process.argv.indexOf('--production') > -1;
+export const isVerbose = process.argv.indexOf('--verbose') > -1;

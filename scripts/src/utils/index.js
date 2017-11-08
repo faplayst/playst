@@ -21,19 +21,15 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import gulp from 'gulp';
-import start from './start';
+import Logger from './Logger';
+import Timer from './Timer';
+import packaged from './packaged';
+import { isProduction, isVerbose } from './environment';
 
-gulp.task('build', () => {
-  build([]);
-});
-
-gulp.task('clean', () => {
-  clean();
-});
-
-gulp.task('start', () => {
-  start();
-});
+export {
+  Logger,
+  Timer,
+  isProduction,
+  isVerbose,
+  packaged,
+};

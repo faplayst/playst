@@ -21,19 +21,4 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import gulp from 'gulp';
-import start from './start';
-
-gulp.task('build', () => {
-  build([]);
-});
-
-gulp.task('clean', () => {
-  clean();
-});
-
-gulp.task('start', () => {
-  start();
-});
+export * from './utils/index';

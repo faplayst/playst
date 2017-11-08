@@ -50,16 +50,16 @@
     "node": ">=6.1"
   },
   "scripts": {
+    "build:tools": "cd scripts && npm run build",
+    "clean:tools": "cd scripts && npm run clean",
     "compile": "npm-run-all -p compile:source",
     "compile:source": "tsc -p src/Playst",
     "lint": "npm-run-all -p lint:source",
     "lint:source": "tslint -c src/Playst/tslint.json --project src/Playst/tsconfig.json --format stylish",
-    "start": "./scripts/bin/playst start",
-    "tools:build": "cd scripts && npm run build",
-    "tools:clean": "cd scripts && npm run clean",
-    "tools:lint": "cd scripts && npm run lint",
-    "tools:prebuild": "cd scripts && npm run prebuild",
-    "tools:pretest": "cd scripts && npm run pretest"
+    "lint:tools": "cd scripts && npm run lint",
+    "prebuild:tools": "cd scripts && npm run prebuild",
+    "pretest:tools": "cd scripts && npm run pretest",
+    "start": "./scripts/bin/playst start"
   },
   "roots": [
     "<rootDir>/src/Playst",

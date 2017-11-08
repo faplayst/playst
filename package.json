@@ -50,6 +50,7 @@
     "node": ">=6.1"
   },
   "scripts": {
+    "build": "./scripts/bin/playst build",
     "build:tools": "cd scripts && npm run build",
     "clean:tools": "cd scripts && npm run clean",
     "compile": "npm-run-all -p compile:source",

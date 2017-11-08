@@ -22,18 +22,35 @@
  */
 
 import path from 'path';
-import { execSync } from 'child_process';
+import spawn from '../spawn';
 
-const SEPARATOR = process.platform === 'win32' ? ';' : ':';
+export default function storybook(action = 'start', options = []) {
+  const configBook = path.join(process.cwd(), 'config/storybook');
+  const defaultOptions = ['-c', configBook];
+  const portBook = '9009';
 
-export default function (command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
+  function start(port, args) {
+    const portsConfig = ['-p', port];
 
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
+    const optionArgs = args.concat(portsConfig);
 
-  execSync(command, {
-    cwd,
-    env: envModules,
-    stdio: 'inherit',
-  });
+    spawn('start-storybook', optionArgs);
+  }
+
+  function build(args) {
+    spawn('build-storybook', args);
+  }
+
+  const args = defaultOptions.concat(options);
+
+  switch (action) {
+    case 'buld':
+      build(args);
+      break;
+    case 'start':
+    default:
+      start(portBook, args);
+      break;
+  }
 }
+

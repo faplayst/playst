@@ -20,20 +20,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+import storybook from './tasks/storybook';
 
-import path from 'path';
-import { execSync } from 'child_process';
-
-const SEPARATOR = process.platform === 'win32' ? ';' : ':';
-
-export default function (command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
-
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
-
-  execSync(command, {
-    cwd,
-    env: envModules,
-    stdio: 'inherit',
-  });
-}
+storybook('build');

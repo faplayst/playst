@@ -21,7 +21,14 @@
  * SOFTWARE.
  */
 
+import build from './build';
 import start from './start';
+import spawn from './spawn';
 import sync from './sync';
 
-export { start, sync };
+export {
+  build,
+  start,
+  spawn,
+  sync,
+};

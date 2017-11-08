@@ -20,12 +20,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+import storybook from './tasks/storybook';
 
-const path = require('path');
-const { spawn } = require('child_process');
-
-export default function start() {
-  const storybook = path.join(process.cwd(), 'config/storybook');
-
-  spawn('start-storybook', ['-p', '9009', '-c', storybook], { stdio: 'inherit' }).on('error', process.exit);
-}
+storybook();

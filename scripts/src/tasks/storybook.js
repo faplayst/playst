@@ -25,7 +25,7 @@ import path from 'path';
 import spawn from '../spawn';
 
 export default function storybook(action = 'start', options = []) {
-  const configBook = path.join(process.cwd(), 'config/storybook');
+  const configBook = path.join(process.cwd(), 'common/config/storybook');
   const defaultOptions = ['-c', configBook];
   const portBook = '9009';
 

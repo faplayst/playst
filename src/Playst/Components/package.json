@@ -1,0 +1,12 @@
+{
+  "name": "@playst/components",
+  "version": "0.0.1",
+  "description": "a package components of Playst UI toolkit.",
+  "main": "index.js",
+  "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.0.0 || ^15.0.1 || ^0.14",
+    "react-dom": "^16.0.0 || ^15.0.1 || ^0.14"
+  }
+}

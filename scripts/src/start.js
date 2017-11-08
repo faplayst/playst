@@ -22,4 +22,6 @@
  */
 import storybook from './tasks/storybook';
 
-storybook();
+export default function start() {
+  storybook();
+}

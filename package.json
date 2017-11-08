@@ -20,6 +20,7 @@
     "src/Playst/*"
   ],
   "devDependencies": {
+    "@microsoft/rush": "^4.0.0",
     "@storybook/addon-actions": "^3.2.13",
     "@storybook/addon-links": "^3.2.13",
     "@storybook/react": "^3.2.13",
@@ -52,6 +53,7 @@
   "scripts": {
     "build": "./scripts/bin/playst build",
     "build:tools": "cd scripts && npm run build",
+    "clean": "./scripts/bin/playst clean",
     "clean:tools": "cd scripts && npm run clean",
     "compile": "npm-run-all -p compile:source",
     "compile:source": "tsc -p src/Playst",

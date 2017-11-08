@@ -22,12 +22,14 @@
  */
 
 import build from './build';
+import clean from './clean';
 import start from './start';
 import spawn from './spawn';
 import sync from './sync';
 
 export {
   build,
+  clean,
   start,
   spawn,
   sync,

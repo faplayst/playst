@@ -1,34 +1,7 @@
 {
+  "extends": "../../common/config/types/base",
   "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "es2017"
-    ],
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "pretty": true,
     "outDir": "../../lib",
-    "sourceMap": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "stripInternal": true,
-    "target": "es6",
     "typeRoots": [
       "../../node_modules/@types"
     ],
@@ -36,7 +9,6 @@
       "node"
     ]
   },
-  "compileOnSave": false,
   "exclude": [
     "./*/node_modules"
   ]

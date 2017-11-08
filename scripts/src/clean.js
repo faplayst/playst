@@ -20,8 +20,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import storybook from './tasks/storybook';
 
-export default function build() {
-  storybook('build');
-}
+import rimraf, {
+  sync
+} from 'rimraf';
+import path from 'path';
+
+[
+  'lib',
+  'temp',
+  'dist',
+  'lib-amd',
+  'lib-es2015',
+  'coverage'
+].forEach(folder => {
+  sync(path.resolve(process.cwd(), folder));
+});

@@ -27,10 +27,8 @@ lib/
 .idea/
 .vscode
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Log files from building
+*.log
 
 # Packages
 config/**/package-lock.json
@@ -38,6 +36,14 @@ scripts/**/package-lock.json
 src/**/package-lock.json
 package-lock.json
 
+config/**/package-deps.json
+scripts/**/package-deps.json
+src/**/package-deps.json
+package-deps.json
+
 config/**/yarn.lock
 scripts/**/yarn.lock
 src/**/yarn.lock
+
+# Ignore Rush temporary files
+/common/temp/**

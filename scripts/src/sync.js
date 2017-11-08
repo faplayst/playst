@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * @license
  * Copyright (c) 2017, Sopar Sihotang.

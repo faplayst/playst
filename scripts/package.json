@@ -1,7 +1,7 @@
 {
-  "name": "@playst/tools",
+  "name": "@playst/task",
   "version": "0.0.1",
-  "description": "a Playst tools for building resources UI Kit of Playst.",
+  "description": "a Playst task tools for building resources UI Kit of Playst.",
   "main": "lib/index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",

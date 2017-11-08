@@ -6,7 +6,7 @@
   "projectFolderMaxDepth": 999,
   "projects": [
     {
-      "packageName": "@playst/tools",
+      "packageName": "@playst/task",
       "projectFolder": "scripts",
       "shouldPublish": false
     },

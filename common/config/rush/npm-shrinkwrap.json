@@ -299,8 +299,8 @@
         "webpack-dev-server": "2.9.4"
       }
     },
-    "@rush-temp/tools": {
-      "version": "file:projects/tools",
+    "@rush-temp/task": {
+      "version": "file:projects/task",
       "requires": {
         "babel-cli": "6.26.0",
         "babel-core": "6.26.0",

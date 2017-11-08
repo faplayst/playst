@@ -21,15 +21,16 @@
  * SOFTWARE.
  */
 
-import { path } from 'path';
-import { sync } from '../sync';
+import path from 'path';
+import sync from '../sync';
 
-module.exports = function (options) {
+export default function tslint(options) {
   const rules = path.dirname(require.resolve('tslint-microsoft-contrib'));
   const project = path.resolve(process.cwd(), 'tsconfig.json');
   const source = path.resolve(process.cwd(), 'src/**/*.ts*');
-  const tslint = 'node ' + path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
+  const tslintCLI = path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
+  const command = `node ${tslintCLI}`;
 
-  sync(`${tslint} --project ${project} -t stylish -r ${rules}`);
-};
+  sync(`${command} -c ${source} --project ${project} -t stylish -r ${rules} ${options}`);
+}
 

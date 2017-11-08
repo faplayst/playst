@@ -21,12 +21,12 @@
  * SOFTWARE.
  */
 
-import { path } from 'path';
+import path from 'path';
 import { execSync } from 'child_process';
 
 const SEPARATOR = process.platform === 'win32' ? ';' : ':';
 
-function sync(command, name, cwd = process.cwd()) {
+export default function sync(command, name, cwd = process.cwd()) {
   const envModules = Object.assign({}, process.env);
 
   envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
@@ -37,5 +37,3 @@ function sync(command, name, cwd = process.cwd()) {
     stdio: 'inherit',
   });
 }
-
-module.exports = sync;

@@ -20,8 +20,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 import storybook from './tasks/storybook';
 
 export default function build() {
-  storybook('build');
+  return storybook('build');
 }

@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * @license
  * Copyright (c) 2017, Sopar Sihotang.
@@ -23,4 +21,13 @@
  * SOFTWARE.
  */
 
-require('../lib/');
+import chalk from 'chalk';
+
+const isProduction = process.argv.indexOf('--production') > -1;
+const isVerbose = process.argv.indexOf('--verbose') > -1;
+
+export default function logger(args) {
+  if (isProduction || isVerbose) {
+    console.log(chalk.gray(args));
+  }
+}

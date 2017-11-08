@@ -22,7 +22,7 @@
  */
 
 import path from 'path';
-import sync from '../sync';
+import { execSync } from '../sync';
 
 export default function tslint(options) {
   const rules = path.dirname(require.resolve('tslint-microsoft-contrib'));
@@ -31,6 +31,6 @@ export default function tslint(options) {
   const tslintCLI = path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
   const command = `node ${tslintCLI}`;
 
-  sync(`${command} -c ${source} --project ${project} -t stylish -r ${rules} ${options}`);
+  execSync(`${command} -c ${source} --project ${project} -t stylish -r ${rules} ${options}`);
 }
 

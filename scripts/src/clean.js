@@ -21,18 +21,20 @@
  * SOFTWARE.
  */
 
-import rimraf, {
-  sync
+import {
+  sync as rimraf,
 } from 'rimraf';
 import path from 'path';
 
-[
-  'lib',
-  'temp',
-  'dist',
-  'lib-amd',
-  'lib-es2015',
-  'coverage'
-].forEach(folder => {
-  sync(path.resolve(process.cwd(), folder));
-});
+export default function clean() {
+  [
+    'lib',
+    'temp',
+    'dist',
+    'lib-amd',
+    'lib-es2015',
+    'coverage',
+  ].forEach((folder) => {
+    rimraf(path.resolve(process.cwd(), folder));
+  });
+}

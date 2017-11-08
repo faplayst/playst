@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * @license
  * Copyright (c) 2017, Sopar Sihotang.
@@ -23,4 +21,29 @@
  * SOFTWARE.
  */
 
-require('../lib/');
+import {
+  colorful,
+} from 'colorful';
+import commander from 'commander';
+import gulp from 'gulp';
+import logger from './logger';
+
+colorful();
+
+commander.on('--help', () => {
+  logger('  Usage:'.to.bold.blue.color);
+});
+
+commander.parse(process.argv);
+
+const task = commander.args[0];
+
+if (!task) {
+  commander.help();
+} else {
+  logger('playst-tools run', task);
+
+  require('./gulpfile');
+
+  gulp.start(task);
+}

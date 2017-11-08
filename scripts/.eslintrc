@@ -7,12 +7,11 @@
   },
   "rules": {
     "id-length": 0,
-    "new-cap": [
-      2,
-      {
-        "capIsNewExceptions": ["AND"]
-      }
-    ],
+    "global-require": 0,
+    "no-console": 0,
+    "new-cap": [2, {
+      "capIsNewExceptions": ["AND"]
+    }],
     "react/jsx-pascal-case": [2, {
       "allowAllCaps": true
     }],

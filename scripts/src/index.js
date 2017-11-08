@@ -21,16 +21,32 @@
  * SOFTWARE.
  */
 
-import build from './build';
-import clean from './clean';
-import start from './start';
-import spawn from './spawn';
-import sync from './sync';
+import {
+  colorful,
+} from 'colorful';
+import commander from 'commander';
+import {
+  version,
+} from '../package.json';
 
-export {
-  build,
-  clean,
-  start,
-  spawn,
-  sync,
-};
+colorful();
+
+commander
+  .version(version)
+  .command('run [name]', 'run specified task')
+  .parse(process.argv);
+
+const proc = commander.runningCommand;
+
+if (proc) {
+  proc.on('close', process.exit.bind(process));
+  proc.on('error', () => {
+    process.exit(1);
+  });
+}
+
+const command = commander.args[0];
+
+if (!command || command !== 'run') {
+  commander.help();
+}

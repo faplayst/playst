@@ -22,35 +22,34 @@
  */
 
 import path from 'path';
-import spawn from '../spawn';
+import {
+  spawnSync,
+} from '../sync';
 
 export default function storybook(action = 'start', options = []) {
   const configBook = path.join(process.cwd(), 'common/config/storybook');
   const defaultOptions = ['-c', configBook];
   const portBook = '9009';
 
-  function start(port, args) {
+  const start = function start(port, args) {
     const portsConfig = ['-p', port];
 
     const optionArgs = args.concat(portsConfig);
 
-    spawn('start-storybook', optionArgs);
-  }
+    return spawnSync('start-storybook', optionArgs);
+  };
 
-  function build(args) {
-    spawn('build-storybook', args);
-  }
+  const build = function build(args) {
+    return spawnSync('build-storybook', args);
+  };
 
   const args = defaultOptions.concat(options);
 
   switch (action) {
     case 'buld':
-      build(args);
-      break;
+      return build(args);
     case 'start':
     default:
-      start(portBook, args);
-      break;
+      return start(portBook, args);
   }
 }
-

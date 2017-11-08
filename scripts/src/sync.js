@@ -22,18 +22,33 @@
  */
 
 import path from 'path';
-import { execSync } from 'child_process';
+import {
+  execSync,
+  spawnSync,
+} from 'child_process';
 
 const SEPARATOR = process.platform === 'win32' ? ';' : ':';
+const envModules = Object.assign({}, process.env);
 
-export default function (command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
+envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
 
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
-
+const exec = function exec(command, name, cwd = process.cwd()) {
   execSync(command, {
     cwd,
     env: envModules,
     stdio: 'inherit',
   });
-}
+};
+
+const spawn = function spawn(command, args = [], cwd = process.cwd()) {
+  return spawnSync(command, args, {
+    cwd,
+    env: envModules,
+    stdio: 'inherit',
+  }).on('error', process.exit);
+};
+
+export {
+  exec as execSync,
+  spawn as spawnSync,
+};

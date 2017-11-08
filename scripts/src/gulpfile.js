@@ -21,20 +21,19 @@
  * SOFTWARE.
  */
 
-import path from 'path';
-import {
-  spawn,
-} from 'child_process';
+import build from './build';
+import clean from './clean';
+import gulp from 'gulp';
+import start from './start';
 
-export default function (command, options = [], cwd = process.cwd()) {
-  const SEPARATOR = process.platform === 'win32' ? ';' : ':';
-  const envModules = Object.assign({}, process.env);
+gulp.task('build', () => {
+  build();
+});
 
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
+gulp.task('clean', () => {
+  clean();
+});
 
-  spawn(command, options, {
-    cwd,
-    env: envModules,
-    stdio: 'inherit',
-  }).on('error', process.exit);
-}
+gulp.task('start', () => {
+  start();
+});

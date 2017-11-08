@@ -13,11 +13,11 @@
     "playst": "./bin/playst"
   },
   "scripts": {
+    "build": "babel src --out-dir lib",
     "clean": "rimraf lib",
     "lint": "eslint --ext js,jsx .",
-    "pretest": "npm run lint",
     "prebuild": "npm run clean",
-    "build": "babel src --out-dir lib"
+    "pretest": "npm run lint"
   },
   "dependencies": {
     "object.assign": "^4.0.4"

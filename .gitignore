@@ -44,6 +44,3 @@ package-deps.json
 config/**/yarn.lock
 scripts/**/yarn.lock
 src/**/yarn.lock
-
-# Ignore Rush temporary files
-/common/temp/**

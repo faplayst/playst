@@ -21,21 +21,9 @@
  * SOFTWARE.
  */
 
-import { path } from 'path';
-import { execSync } from 'child_process';
+var path = require('path');
 
-const SEPARATOR = process.platform === 'win32' ? ';' : ':';
+var _require = require('child_process'),
+    spawn = _require.spawn;
 
-function sync(command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
-
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
-
-  execSync(command, {
-    cwd,
-    env: envModules,
-    stdio: 'inherit',
-  });
-}
-
-module.exports = sync;
+spawn('start-storybook', ['-p', '9009', '-c', path.join(process.cwd(), 'config/storybook')], { stdio: 'inherit' }).on('error', process.exit);

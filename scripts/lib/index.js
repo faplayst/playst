@@ -1,3 +1,18 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sync = exports.start = undefined;
+
+var _start = require('./start');
+
+var _start2 = _interopRequireDefault(_start);
+
+var _sync = require('./sync');
+
+var _sync2 = _interopRequireDefault(_sync);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 /**
  * @license
  * Copyright (c) 2017, Sopar Sihotang.
@@ -21,21 +36,5 @@
  * SOFTWARE.
  */
 
-import { path } from 'path';
-import { execSync } from 'child_process';
-
-const SEPARATOR = process.platform === 'win32' ? ';' : ':';
-
-function sync(command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
-
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
-
-  execSync(command, {
-    cwd,
-    env: envModules,
-    stdio: 'inherit',
-  });
-}
-
-module.exports = sync;
+exports.start = _start2['default'];
+exports.sync = _sync2['default'];

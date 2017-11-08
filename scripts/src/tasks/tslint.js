@@ -20,3 +20,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
+import { path } from 'path';
+import { sync } from '../sync';
+
+module.exports = function (options) {
+  const rules = path.dirname(require.resolve('tslint-microsoft-contrib'));
+  const project = path.resolve(process.cwd(), 'tsconfig.json');
+  const source = path.resolve(process.cwd(), 'src/**/*.ts*');
+  const tslint = 'node ' + path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
+
+  sync(`${tslint} --project ${project} -t stylish -r ${rules}`);
+};
+

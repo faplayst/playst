@@ -21,12 +21,7 @@
  * SOFTWARE.
  */
 
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
+import start from './start';
+import sync from './sync';
 
-console.log(process.cwd(), 'config/storybook');
-
-spawn('start-storybook',
-  ['-p', '9009', '-c', path.join(process.cwd(), 'config/storybook')],
-  { stdio: 'inherit' }).on('error', process.exit);
+export { start, sync };

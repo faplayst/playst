@@ -1,3 +1,13 @@
+var _object = require('object.assign');
+
+var _object2 = _interopRequireDefault(_object);
+
+var _path = require('path');
+
+var _child_process = require('child_process');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 /**
  * @license
  * Copyright (c) 2017, Sopar Sihotang.
@@ -21,20 +31,19 @@
  * SOFTWARE.
  */
 
-import { path } from 'path';
-import { execSync } from 'child_process';
+var SEPARATOR = process.platform === 'win32' ? ';' : ':';
 
-const SEPARATOR = process.platform === 'win32' ? ';' : ':';
+function sync(command, name) {
+  var cwd = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : process.cwd();
 
-function sync(command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
+  var envModules = (0, _object2['default'])({}, process.env);
 
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
+  envModules.PATH = _path.path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
 
-  execSync(command, {
-    cwd,
+  (0, _child_process.execSync)(command, {
+    cwd: cwd,
     env: envModules,
-    stdio: 'inherit',
+    stdio: 'inherit'
   });
 }
 

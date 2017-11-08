@@ -1,3 +1,7 @@
+var _path = require('path');
+
+var _sync = require('../sync');
+
 /**
  * @license
  * Copyright (c) 2017, Sopar Sihotang.
@@ -21,21 +25,11 @@
  * SOFTWARE.
  */
 
-import { path } from 'path';
-import { execSync } from 'child_process';
+module.exports = function (options) {
+  var rules = _path.path.dirname(require.resolve('tslint-microsoft-contrib'));
+  var project = _path.path.resolve(process.cwd(), 'tsconfig.json');
+  var source = _path.path.resolve(process.cwd(), 'src/**/*.ts*');
+  var tslint = 'node ' + _path.path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
 
-const SEPARATOR = process.platform === 'win32' ? ';' : ':';
-
-function sync(command, name, cwd = process.cwd()) {
-  const envModules = Object.assign({}, process.env);
-
-  envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
-
-  execSync(command, {
-    cwd,
-    env: envModules,
-    stdio: 'inherit',
-  });
-}
-
-module.exports = sync;
+  (0, _sync.sync)(tslint + ' --project ' + String(project) + ' -t stylish -r ' + String(rules));
+};

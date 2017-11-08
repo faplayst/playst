@@ -6,7 +6,8 @@ node_modules/
 
 # testing
 /coverage
-/lib
+lib
+lib/
 
 # production
 /build

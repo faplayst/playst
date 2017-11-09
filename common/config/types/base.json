@@ -21,7 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "pretty": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
     "strict": true,
     "strictNullChecks": true,

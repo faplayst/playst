@@ -36,11 +36,13 @@ export default function build(additionalTasks = []) {
 
   const buildStartTime = new Date().getTime();
 
+  let workspaces = [];
   let isFail = false;
   let promise = Promise.resolve();
 
   let tasks = [
     'tslint',
+    'tscompile',
   ];
 
   tasks = tasks.concat(additionalTasks);
@@ -53,6 +55,12 @@ export default function build(additionalTasks = []) {
     tasks = [process.argv[3]];
   }
 
+  const {
+    workspaces: pkgWorkspaces,
+  } = pkg;
+
+  workspaces = pkgWorkspaces;
+
   const run = function run(task) {
     const startTime = new Date().getTime();
 
@@ -61,6 +69,7 @@ export default function build(additionalTasks = []) {
         .then(() => Logger.startTask(pkg.name, task))
         .then(() => require(`./tasks/${task}`)({
           isProduction,
+          workspaces,
           argv: process.argv,
         }))
         .then(() => Logger.endTask(pkg.name, task, startTime))

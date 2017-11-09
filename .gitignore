@@ -8,6 +8,10 @@ node_modules/
 /coverage
 lib
 lib/
+lib-amd
+lib-amd/
+lib-es2015
+lib-es2015/
 
 # production
 /build

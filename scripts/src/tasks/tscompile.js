@@ -28,47 +28,29 @@ import {
 import {
   execSync,
 } from '../sync';
-import _ from 'lodash/array';
 
 module.exports = (options = {}) => {
-  const mstslint = require.resolve('tslint-microsoft-contrib');
-  const cli = path.resolve(__dirname, '../../node_modules/tslint/lib/tslint-cli');
-  const command = `node ${cli}`;
+  const cli = path.resolve(__dirname, '../../node_modules/typescript/lib/tsc');
+  const command = `node ${cli} --pretty`;
+  const libPath = path.resolve(process.cwd(), 'lib');
+  const srcPath = path.resolve(process.cwd(), 'src');
 
-  let rules = path.dirname(mstslint);
-
-  if (options.rulesDir) {
-    rules = options.rulesDir;
-  }
+  let args = options.isProduction ? ` --inlineSources --sourceRoot ${path.relative(libPath, srcPath)}` : '';
 
   const run = function run(workspace = '', cwd = process.cwd()) {
-    let args = _.compact(['-t', 'stylish']);
-
     let project = path.resolve(cwd, 'tsconfig.json');
-    let source = path.resolve(cwd, 'src/**/*.ts*');
-    let config = path.resolve(cwd, 'tslint.json');
-
     if (workspace && workspace !== '') {
       project = path.resolve(cwd, `${workspace}/tsconfig.json`);
-      source = path.resolve(cwd, `${workspace}/**/*.ts*`);
-      config = path.resolve(cwd, `${workspace}/tslint.json`);
     }
 
-    args = _.concat(args, `'${source}'`);
+    args = existsSync(project) ? `${args} -p ${path.dirname(project)}` : args;
 
-    if (existsSync(project)) {
-      args = _.pull(args, `'${source}'`);
-      args = _.concat(args, '--project', `${project}`);
+    execSync(`${command} -outDir lib -t es5 -m commonjs ${args}`);
+
+    if (options.isProduction) {
+      execSync(`${command} -outDir lib-amd -t es5 -m amd ${args}`);
+      execSync(`${command} -outDir lib-es2015 -t es5 -m es2015 ${args}`);
     }
-
-    args = _.concat(args, '-r', `${rules}`);
-
-    if (existsSync(config)) {
-      args = _.pull(args, '-r', `${rules}`);
-      args = _.concat(args, '-c', `${config}`);
-    }
-
-    execSync(`${command} ${_.join(args, ' ')}`);
   };
 
   let workspaces = [];

@@ -1,7 +1,5 @@
 {
-  "presets": [
-    "../common/config/babel/preset"
-  ],
+  "presets": ["../common/config/babel/index"],
   "plugins": [
     [
       "transform-replace-object-assign",

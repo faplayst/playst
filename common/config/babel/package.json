@@ -1,0 +1,39 @@
+{
+  "name": "@playst/babel-preset",
+  "version": "0.0.1",
+  "description": "a babel preset for transforming javascript for Playst.",
+  "main": "index.js",
+  "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "babel",
+    "es2015",
+    "es6",
+    "javascript"
+  ],
+  "scripts": {
+    "build": "npm run pretest",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run tests-only"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "babel-plugin-transform-es5-property-mutators": "^6.24.1",
+    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
+    "babel-plugin-transform-jscript": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "object.assign": "^4.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}

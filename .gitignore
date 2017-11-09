@@ -31,16 +31,16 @@ lib/
 *.log
 
 # Packages
-config/**/package-lock.json
+common/**/package-lock.json
 scripts/**/package-lock.json
 src/**/package-lock.json
 package-lock.json
 
-config/**/package-deps.json
+common/**/package-deps.json
 scripts/**/package-deps.json
 src/**/package-deps.json
 package-deps.json
 
-config/**/yarn.lock
+common/**/yarn.lock
 scripts/**/yarn.lock
 src/**/yarn.lock

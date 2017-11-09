@@ -6,6 +6,11 @@
   "projectFolderMaxDepth": 999,
   "projects": [
     {
+      "packageName": "@playst/babel-preset",
+      "projectFolder": "common/config/babel",
+      "shouldPublish": false
+    },
+    {
       "packageName": "@playst/task",
       "projectFolder": "scripts",
       "shouldPublish": false

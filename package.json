@@ -17,13 +17,13 @@
     "lib"
   ],
   "workspaces": [
-    "src/Playst/*"
+    "src/Playst"
   ],
   "devDependencies": {
     "@microsoft/rush": "^4.0.0",
-    "@storybook/addon-actions": "^3.2.13",
-    "@storybook/addon-links": "^3.2.13",
-    "@storybook/react": "^3.2.13",
+    "@storybook/addon-actions": "^3.2.14",
+    "@storybook/addon-links": "^3.2.14",
+    "@storybook/react": "^3.2.14",
     "@types/node": "^8.0.47",
     "@types/react": "^15.6.6",
     "@types/react-dom": "^16.0.2",
@@ -42,7 +42,7 @@
     "tslint-react": "^3.2.0",
     "typescript": "^2.5.3",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.4"
   },
   "engines": {
     "node": ">=6.1"
@@ -56,7 +56,7 @@
     "compile": "npm-run-all -p compile:source",
     "compile:source": "tsc -p src/Playst",
     "lint": "npm-run-all -p lint:source",
-    "lint:source": "tslint -c src/Playst/tslint.json --project src/Playst/tsconfig.json --format stylish",
+    "lint:source": "tslint -c src/Playst/tslint.json --project src/Playst/**/*.ts* --format stylish",
     "lint:task": "cd scripts && npm run lint",
     "prebuild:task": "cd scripts && npm run prebuild",
     "pretest:task": "cd scripts && npm run pretest",

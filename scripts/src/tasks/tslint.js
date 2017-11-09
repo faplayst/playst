@@ -21,25 +21,77 @@
  * SOFTWARE.
  */
 
-"use strict";
-
 import path from 'path';
-import { execSync } from '../sync';
+import {
+  existsSync,
+} from 'fs';
+import {
+  packaged,
+} from '../utils';
+import {
+  execSync,
+} from '../sync';
+import { arch } from 'os';
 
-module.exports = (options) => {
+module.exports = (options = {}) => {
   const mstslint = require.resolve('tslint-microsoft-contrib');
-  // console.log(mstslint);
-  // const mstslint = path.resolve(__dirname, '../node_modules/@microsoft/lib/tslint-microsoft-contrib');
-  // console.log(mstslint);
-  const rules = path.dirname(mstslint);
+  const cli = path.resolve(__dirname, '../../node_modules/tslint/lib/tslint-cli');
+  const command = `node ${cli}`;
 
-  // console.log(rules);
+  let rules = path.dirname(mstslint);
 
-  const project = path.resolve(process.cwd(), 'tsconfig.json');
-  const source = path.resolve(process.cwd(), 'src/**/*.ts*');
-  const tslintCLI = path.resolve(__dirname, '../node_modules/tslint/lib/tslint-cli');
-  const command = `node ${tslintCLI}`;
+  if (options.rulesDir) {
+    rules = options.rulesDir;
+  }
 
-  execSync(`${command} -c ${source} --project ${project} -t stylish -r ${rules}`);
-}
+  const run = function run(workspace = '', cwd = process.cwd()) {
+    const args = ['-t', 'stylish'];
 
+    let project = path.resolve(cwd, 'tsconfig.json');
+    let source = path.resolve(cwd, 'src/**/*.ts*');
+    let config = path.resolve(cwd, 'tslint.json');
+
+    if (workspace && workspace !== '') {
+      project = path.resolve(cwd, `${workspace}/tsconfig.json`);
+      source = path.resolve(cwd, `${workspace}/**/*.ts*`);
+      config = path.resolve(cwd, `${workspace}/tslint.json`);
+    }
+
+    args.push(`'${source}'`);
+
+    if (existsSync(project)) {
+      args.pop();
+      args.push('--project');
+      args.push(`${project}`);
+    }
+
+    args.push('-r');
+    args.push(`${rules}`);
+
+    if (existsSync(config)) {
+      args.pop();
+      args.pop();
+      args.push('-c');
+      args.push(`${config}`);
+    }
+
+    execSync(`${command} ${args.join(' ')}`);
+  };
+
+  let workspaces = [];
+  let promise = Promise.resolve();
+
+  if (options.workspaces) {
+    workspaces = options.workspaces;
+  }
+
+  if (packaged().workspaces) {
+    workspaces = packaged().workspaces;
+  }
+
+  workspaces.forEach((workspace) => {
+    promise = promise.then(() => run(workspace));
+  });
+
+  return undefined;
+};

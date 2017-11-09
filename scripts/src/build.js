@@ -20,7 +20,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-"use strict";
+
 import {
   Logger,
   isProduction,
@@ -59,7 +59,7 @@ export default function build(additionalTasks = []) {
     return Promise.resolve()
       .then(() => !isFail && Promise.resolve()
         .then(() => Logger.startTask(pkg.name, task))
-        .then(() => require('./tasks/' + task)({
+        .then(() => require(`./tasks/${task}`)({
           isProduction,
           argv: process.argv,
         }))

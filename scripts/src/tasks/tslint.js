@@ -31,7 +31,7 @@ import {
 import {
   execSync,
 } from '../sync';
-import { arch } from 'os';
+import _ from 'lodash/array';
 
 module.exports = (options = {}) => {
   const mstslint = require.resolve('tslint-microsoft-contrib');
@@ -45,7 +45,7 @@ module.exports = (options = {}) => {
   }
 
   const run = function run(workspace = '', cwd = process.cwd()) {
-    const args = ['-t', 'stylish'];
+    let args = _.compact(['-t', 'stylish']);
 
     let project = path.resolve(cwd, 'tsconfig.json');
     let source = path.resolve(cwd, 'src/**/*.ts*');
@@ -57,36 +57,40 @@ module.exports = (options = {}) => {
       config = path.resolve(cwd, `${workspace}/tslint.json`);
     }
 
-    args.push(`'${source}'`);
+    args = _.concat(args, `'${source}'`);
 
     if (existsSync(project)) {
-      args.pop();
-      args.push('--project');
-      args.push(`${project}`);
+      args = _.pull(args, `'${source}'`);
+      args = _.concat(args, '--project', `${project}`);
     }
 
-    args.push('-r');
-    args.push(`${rules}`);
+    args = _.concat(args, '-r', `${rules}`);
 
     if (existsSync(config)) {
-      args.pop();
-      args.pop();
-      args.push('-c');
-      args.push(`${config}`);
+      args = _.pull(args, '-r', `${rules}`);
+      args = _.concat(args, '-c', `${config}`);
     }
 
-    execSync(`${command} ${args.join(' ')}`);
+    execSync(`${command} ${_.join(args, ' ')}`);
   };
 
   let workspaces = [];
   let promise = Promise.resolve();
 
-  if (options.workspaces) {
-    workspaces = options.workspaces;
+  const {
+    workspaces: optWorkspaces,
+  } = options;
+
+  if (optWorkspaces) {
+    workspaces = optWorkspaces;
   }
 
-  if (packaged().workspaces) {
-    workspaces = packaged().workspaces;
+  const {
+    workspaces: pkgWorkspaces,
+  } = packaged();
+
+  if (pkgWorkspaces) {
+    workspaces = pkgWorkspaces;
   }
 
   workspaces.forEach((workspace) => {

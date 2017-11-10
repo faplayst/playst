@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
+  "repository": "git@github.com:sihotang/playst.git",
   "keywords": [
     "babel",
     "es2015",

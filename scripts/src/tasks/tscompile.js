@@ -45,6 +45,12 @@ module.exports = (options = {}) => {
 
     args = existsSync(project) ? `${args} -p ${path.dirname(project)}` : args;
 
+    console.log(args);
+    console.log(existsSync(project));
+    console.log(project);
+    console.log(workspace);
+    console.log(path.dirname(project));
+
     execSync(`${command} -outDir lib -t es5 -m commonjs ${args}`);
 
     if (options.isProduction) {

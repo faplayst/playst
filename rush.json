@@ -21,6 +21,11 @@
       "shouldPublish": false
     },
     {
+      "packageName": "@playst/common",
+      "projectFolder": "src/Playst/Common",
+      "shouldPublish": false
+    },
+    {
       "packageName": "@playst/components",
       "projectFolder": "src/Playst/Components",
       "shouldPublish": false

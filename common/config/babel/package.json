@@ -1,6 +1,6 @@
 {
   "name": "@playst/babel-preset",
-  "version": "0.0.1",
+  "version": "0.0.0-Placeholder",
   "description": "a babel preset for transforming javascript for Playst.",
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "npm run pretest",
+    "clean": "node -v",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "npm run tests-only"

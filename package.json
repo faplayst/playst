@@ -1,7 +1,6 @@
 {
   "name": "playst",
-  "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0-Placeholder",
   "description": "a Playst UI toolkit for building web.",
   "repository": "git@github.com:sihotang/playst.git",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
@@ -65,9 +64,5 @@
     "rush:rebuild": "node node_modules/@microsoft/rush/bin/rush rebuild --production --verbose",
     "rush:rebuild:fast": "node node_modules/@microsoft/rush/bin/rush rebuild --verbose",
     "start": "./scripts/bin/task run start"
-  },
-  "roots": [
-    "<rootDir>/src/Playst",
-    "<rootDir>/scripts"
-  ]
+  }
 }

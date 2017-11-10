@@ -21,6 +21,12 @@
  * SOFTWARE.
  */
 
-export { default as IProps } from "./IProps";
-export { default as IActionProps } from "./IActionProps";
-export { default as IComponentProps } from "./IComponentProps";
+import * as React from "react";
+import { IComponentProps } from "../";
+
+export default abstract class Component<Props extends IComponentProps<HTMLElement, {}>, Context = {}> extends
+  React.Component<Props, Context> {
+  constructor(props?: Props, context?: Context) {
+    super(props, context);
+  }
+}

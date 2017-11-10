@@ -21,8 +21,8 @@
  * SOFTWARE.
  */
 
-import { Component } from "../../Commons";
-import { IComponentProps } from "../../Contracts";
+import { Component } from "@playst/common";
+import { IComponentProps } from "@playst/common";
 import { Button } from "./Button";
 
 export enum ButtonType {

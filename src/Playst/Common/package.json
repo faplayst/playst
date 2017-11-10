@@ -1,7 +1,7 @@
 {
-  "name": "@playst/components",
+  "name": "@playst/common",
   "version": "0.0.0-Placeholder",
-  "description": "a package components of Playst UI toolkit.",
+  "description": "a package commons of Playst UI toolkit.",
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,6 @@
     "start": "node ../../../scripts/bin/task run start"
   },
   "dependencies": {
-    "@playst/common": "file:../Common",
     "tslib": "^1.8.0"
   },
   "peerDependencies": {

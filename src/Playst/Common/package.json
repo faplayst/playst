@@ -1,6 +1,6 @@
 {
   "name": "@playst/common",
-  "version": "0.0.0-Placeholder",
+  "version": "0.0.0-placeholder",
   "description": "a package commons of Playst UI toolkit.",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

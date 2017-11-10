@@ -1,6 +1,6 @@
 {
   "name": "@playst/babel-preset",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a Playst's babel preset for transforming JavaScript.",
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",

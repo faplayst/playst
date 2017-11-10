@@ -2,8 +2,15 @@
   "name": "playst",
   "version": "0.0.0-Placeholder",
   "description": "a Playst UI toolkit for building web.",
-  "repository": "git@github.com:sihotang/playst.git",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sihotang/playst.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sihotang/playst/issues"
+  },
+  "homepage": "https://github.com/sihotang/playst#readme",
   "license": "MIT",
   "keywords": [
     "react",

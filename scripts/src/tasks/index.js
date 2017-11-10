@@ -22,9 +22,11 @@
  */
 
 import storybook from './storybook';
+import tscompile from './tscompile';
 import tslint from './tslint';
 
 export {
   storybook,
+  tscompile,
   tslint,
 };

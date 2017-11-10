@@ -26,6 +26,10 @@ import {
   isProduction,
   packaged,
 } from './utils';
+import {
+  concat,
+  compact,
+} from 'lodash/array';
 
 export default function build(additionalTasks = []) {
   const pkg = packaged();
@@ -45,7 +49,7 @@ export default function build(additionalTasks = []) {
     'tscompile',
   ];
 
-  tasks = tasks.concat(additionalTasks);
+  tasks = concat(tasks, additionalTasks);
 
   if (pkg.disabledTasks) {
     tasks = tasks.filter(task => pkg.disabledTasks.indexOf(task) < 0);
@@ -59,7 +63,7 @@ export default function build(additionalTasks = []) {
     workspaces: pkgWorkspaces,
   } = pkg;
 
-  workspaces = typeof (pkgWorkspaces) !== 'undefined' ? pkgWorkspaces : ['.'];
+  workspaces = typeof (pkgWorkspaces) !== 'undefined' ? pkgWorkspaces : compact(['.']);
 
   const run = function run(task) {
     const startTime = new Date().getTime();

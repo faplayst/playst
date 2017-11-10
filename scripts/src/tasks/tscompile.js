@@ -28,6 +28,9 @@ import {
 import {
   execSync,
 } from '../sync';
+import {
+  trimEnd,
+} from 'lodash';
 
 module.exports = (options = {}) => {
   const cli = path.resolve(__dirname, '../../node_modules/typescript/lib/tsc');
@@ -60,7 +63,7 @@ module.exports = (options = {}) => {
   workspaces = pkgWorkspaces;
 
   workspaces.forEach((workspace) => {
-    promise = promise.then(() => run(workspace));
+    promise = promise.then(() => run(trimEnd(workspace, '/*')));
   });
 
   return undefined;

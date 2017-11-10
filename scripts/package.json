@@ -4,7 +4,6 @@
   "description": "a Playst task tools for building resources UI Kit of Playst.",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
-  "private": true,
   "files": [
     "lib"
   ],

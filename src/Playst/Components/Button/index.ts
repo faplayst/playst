@@ -23,5 +23,5 @@
 
 export * from "./AbstractButton";
 export * from "./Button";
-export * from "./DefaultButton/DefaultButton";
-export * from "./PrimaryButton/PrimaryButton";
+export { default as DefaultButton } from "./DefaultButton/DefaultButton";
+export { default as PrimaryButton } from "./PrimaryButton/PrimaryButton";

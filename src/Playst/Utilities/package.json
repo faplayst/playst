@@ -1,0 +1,21 @@
+{
+  "name": "@playst/utilities",
+  "version": "0.0.0-placeholder",
+  "description": "a package utilities of Playst UI toolkit.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node ../../../scripts/bin/task run build",
+    "clean": "node ../../../scripts/bin/task run clean",
+    "start": "node ../../../scripts/bin/task run start"
+  },
+  "dependencies": {
+    "tslib": "^1.8.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^15.0.1 || ^0.14",
+    "react-dom": "^16.0.0 || ^15.0.1 || ^0.14"
+  }
+}

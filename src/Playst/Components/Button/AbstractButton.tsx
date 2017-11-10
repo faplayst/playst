@@ -21,6 +21,7 @@
  * SOFTWARE.
  */
 
+import React from "react";
 import { Component, Props } from "@playst/common";
 import { Button } from "./Button";
 
@@ -35,6 +36,8 @@ export interface IButton {
 
 export interface IButtonProps extends Props.IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
   buttonType?: ButtonType;
+  onClick?: (event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void;
+  text?: string;
 }
 
 export abstract class AbstractButton extends Component<IButtonProps, {}> implements IButton {
@@ -49,4 +52,23 @@ export abstract class AbstractButton extends Component<IButtonProps, {}> impleme
   public focus(): void {
     this._element.focus();
   }
+
+  // #region Events
+  private _onClick(event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
+    const { onClick } = this.props;
+
+    onClick && onClick(event, this);
+
+    !event.defaultPrevented && this._onToggle();
+
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  private _onToggle(): void {
+    const { menuProps } = this.props;
+    let currentMenuProps = this.state.menuProps;
+    this.setState({ menuProps: currentMenuProps ? null : menuProps });
+  }
+  // #endregion
 }

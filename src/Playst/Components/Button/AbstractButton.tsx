@@ -21,8 +21,7 @@
  * SOFTWARE.
  */
 
-import { Component } from "@playst/common";
-import { IComponentProps } from "@playst/common";
+import { Component, Props } from "@playst/common";
 import { Button } from "./Button";
 
 export enum ButtonType {
@@ -34,7 +33,7 @@ export interface IButton {
   focus: () => void;
 }
 
-export interface IButtonProps extends IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
+export interface IButtonProps extends Props.IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
   buttonType?: ButtonType;
 }
 

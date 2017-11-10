@@ -2,7 +2,8 @@
   "name": "@playst/components",
   "version": "0.0.0-Placeholder",
   "description": "a package components of Playst UI toolkit.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
   "workspaces": [
@@ -14,11 +15,12 @@
     "start": "node ../../../scripts/bin/task run start"
   },
   "dependencies": {
-    "@playst/common": "file:../Common",
+    "@playst/common": "0.0.0-Placeholder",
     "tslib": "^1.8.0"
   },
   "peerDependencies": {
     "react": "^16.0.0 || ^15.0.1 || ^0.14",
-    "react-dom": "^16.0.0 || ^15.0.1 || ^0.14"
+    "react-dom": "^16.0.0 || ^15.0.1 || ^0.14",
+    "@playst/common": "0.0.0-Placeholder"
   }
 }

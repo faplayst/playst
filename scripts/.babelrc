@@ -1,5 +1,5 @@
 {
-  "presets": ["../common/config/babel/index"],
+  "presets": ["@playst/babel-preset"],
   "plugins": [
     [
       "transform-replace-object-assign",

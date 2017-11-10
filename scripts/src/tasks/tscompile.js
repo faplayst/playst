@@ -38,10 +38,7 @@ module.exports = (options = {}) => {
   let args = options.isProduction ? ` --inlineSources --sourceRoot ${path.relative(libPath, srcPath)}` : '';
 
   const run = function run(workspace = '', cwd = process.cwd()) {
-    let project = path.resolve(cwd, 'tsconfig.json');
-    if (workspace && workspace !== '') {
-      project = path.resolve(cwd, `${workspace}/tsconfig.json`);
-    }
+    const project = path.resolve(cwd, `${workspace}/tsconfig.json`);
 
     args = existsSync(project) ? `${args} -p ${path.dirname(project)}` : args;
 

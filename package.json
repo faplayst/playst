@@ -3,6 +3,7 @@
   "version": "0.0.0-Placeholder",
   "description": "a Playst UI toolkit for building web.",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/sihotang/playst.git"
@@ -23,7 +24,7 @@
     "lib"
   ],
   "workspaces": [
-    "src/Playst"
+    "src/Playst/*"
   ],
   "devDependencies": {
     "@microsoft/rush": "^4.0.0",
@@ -57,9 +58,11 @@
     "build": "./scripts/bin/task run build",
     "build:all": "npm-run-all build:task rush:rebuild",
     "build:task": "cd scripts && npm run build",
+    "build:common": "cd src/Playst/Common && npm run build",
     "clean": "./scripts/bin/task run clean",
     "clean:all": "npm-run-all clean clean:task",
     "clean:task": "cd scripts && npm run clean",
+    "clean:common": "cd src/Playst/Common && npm run clean",
     "lint": "npm-run-all -p lint:source",
     "lint:source": "tslint -c src/Playst/tslint.json --project src/Playst/**/*.ts* --format stylish",
     "lint:task": "cd scripts && npm run lint",

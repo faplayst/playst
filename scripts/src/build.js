@@ -59,7 +59,7 @@ export default function build(additionalTasks = []) {
     workspaces: pkgWorkspaces,
   } = pkg;
 
-  workspaces = pkgWorkspaces;
+  workspaces = typeof (pkgWorkspaces) !== 'undefined' ? pkgWorkspaces : ['.'];
 
   const run = function run(task) {
     const startTime = new Date().getTime();

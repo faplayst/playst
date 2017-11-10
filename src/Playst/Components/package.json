@@ -6,9 +6,6 @@
   "typings": "lib/index.d.ts",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
-  "workspaces": [
-    "./"
-  ],
   "scripts": {
     "build": "node ../../../scripts/bin/task run build",
     "clean": "node ../../../scripts/bin/task run clean",

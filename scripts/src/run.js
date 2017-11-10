@@ -26,7 +26,9 @@ import {
 } from 'colorful';
 import commander from 'commander';
 import gulp from 'gulp';
-import { Logger } from './utils';
+import {
+  Logger,
+} from './utils';
 
 colorful();
 

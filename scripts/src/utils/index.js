@@ -24,7 +24,10 @@
 import Logger from './Logger';
 import Timer from './Timer';
 import packaged from './packaged';
-import { isProduction, isVerbose } from './environment';
+import {
+  isProduction,
+  isVerbose,
+} from './environment';
 
 export {
   Logger,

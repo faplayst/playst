@@ -42,19 +42,11 @@ module.exports = (options = {}) => {
   }
 
   const run = function run(workspace = '', cwd = process.cwd()) {
-    let args = _.compact(['-t', 'stylish']);
+    const project = path.resolve(cwd, `${workspace}/tsconfig.json`);
+    const config = path.resolve(cwd, `${workspace}/tslint.json`);
+    const source = path.resolve(cwd, `${workspace}/**/*.ts*`);
 
-    let project = path.resolve(cwd, 'tsconfig.json');
-    let source = path.resolve(cwd, 'src/**/*.ts*');
-    let config = path.resolve(cwd, 'tslint.json');
-
-    if (workspace && workspace !== '') {
-      project = path.resolve(cwd, `${workspace}/tsconfig.json`);
-      source = path.resolve(cwd, `${workspace}/**/*.ts*`);
-      config = path.resolve(cwd, `${workspace}/tslint.json`);
-    }
-
-    args = _.concat(args, `'${source}'`);
+    let args = _.compact(['-t', 'stylish', `'${source}'`]);
 
     if (existsSync(project)) {
       args = _.pull(args, `'${source}'`);

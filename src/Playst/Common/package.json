@@ -6,9 +6,6 @@
   "typings": "lib/index.d.ts",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
-  "workspaces": [
-    "./"
-  ],
   "scripts": {
     "build": "node ../../../scripts/bin/task run build",
     "clean": "node ../../../scripts/bin/task run clean",
@@ -20,8 +17,5 @@
   "peerDependencies": {
     "react": "^16.0.0 || ^15.0.1 || ^0.14",
     "react-dom": "^16.0.0 || ^15.0.1 || ^0.14"
-  },
-  "config": {
-    "access": "public"
   }
 }

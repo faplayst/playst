@@ -22,7 +22,7 @@
  */
 
 import * as React from "react";
-import { IComponentProps } from "../";
+import { IComponentProps } from "./Props";
 
 export default abstract class Component<Props extends IComponentProps<HTMLElement, {}>, Context = {}> extends
   React.Component<Props, Context> {

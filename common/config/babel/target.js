@@ -23,4 +23,18 @@
  * SOFTWARE.
  */
 
-module.exports = require('./preset');
+var assign = require('object.assign');
+
+module.exports = function targets(options) {
+  var defaultTargets = {
+    android: 30,
+    chrome: 35,
+    edge: 14,
+    explorer: 9,
+    firefox: 52,
+    safari: 8,
+    ucandroid: 1
+  };
+
+  return assign({}, defaultTargets, options.additionalTargets);
+};

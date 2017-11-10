@@ -23,4 +23,14 @@
  * SOFTWARE.
  */
 
-module.exports = require('./preset');
+var commonjs = require('babel-plugin-transform-es2015-modules-commonjs');
+
+module.exports = function modules(options) {
+  var defaultOptions = {
+    strict: false
+  };
+
+  var newOptions = Object.assign({}, options, defaultOptions);
+
+  return [commonjs, newOptions];
+};

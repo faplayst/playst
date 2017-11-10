@@ -5,7 +5,10 @@
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "license": "MIT",
-  "repository": "git@github.com:sihotang/playst.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sihotang/playst.git"
+  },
   "keywords": [
     "babel",
     "es2015",
@@ -37,5 +40,9 @@
     "eslint": "^4.10.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/sihotang/playst/issues"
+  },
+  "homepage": "https://github.com/sihotang/playst#readme"
 }

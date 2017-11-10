@@ -21,6 +21,5 @@
  * SOFTWARE.
  */
 
-export { default as Commons } from "./Commons";
+export { default as Common } from "./Common";
 export { default as Components } from "./Components";
-export { default as Contracts } from "./Contracts";

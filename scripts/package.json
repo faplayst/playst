@@ -29,7 +29,7 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
-    "@playst/babel-preset": "^0.0.1",
+    "@playst/babel-preset": "^0.0.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",

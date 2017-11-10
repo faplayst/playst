@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install --save-dev babel-preset-airbnb
+$ npm install --save-dev @playst/babel-preset
 ```
 
 ## Usage

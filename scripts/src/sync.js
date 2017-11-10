@@ -33,7 +33,7 @@ const envModules = Object.assign({}, process.env);
 envModules.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + envModules.PATH;
 
 const exec = function exec(command, name, cwd = process.cwd()) {
-  execSync(command, {
+  return execSync(command, {
     cwd,
     env: envModules,
     stdio: 'inherit',

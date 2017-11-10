@@ -75,7 +75,6 @@ export default function build(additionalTasks = []) {
         .then(() => Logger.endTask(pkg.name, task, startTime))
         .catch((e) => {
           isFail = true;
-          console.log(e);
           Logger.endTask(pkg.name, task, startTime, e);
         }));
   };

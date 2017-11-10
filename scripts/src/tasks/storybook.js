@@ -23,33 +23,46 @@
 
 import path from 'path';
 import {
-  spawnSync,
+  execSync,
 } from '../sync';
+import _ from 'lodash/array';
 
-export default function storybook(action = 'start', options = []) {
-  const configBook = path.join(process.cwd(), 'common/config/storybook');
-  const defaultOptions = ['-c', configBook];
-  const portBook = '9009';
+module.exports = (options = {}) => {
+  const config = path.resolve(process.cwd(), 'common/config/storybook');
 
-  const start = function start(port, args) {
-    const portsConfig = ['-p', port];
+  let args = _.compact(['-c', `${config}`]);
 
-    const optionArgs = args.concat(portsConfig);
+  const run = function run() {
+    // const cli = path.resolve(__dirname, '../../node_modules/@storybook/react/bin/index');
+    // const command = `node ${cli}`;
+    const port = '9009';
 
-    return spawnSync('start-storybook', optionArgs);
+    args = _.concat(args, '-p', `${port}`);
+
+    return execSync(`start-storybook ${_.join(args, ' ')}`);
+    // return execSync(`${command} ${_.join(args, ' ')}`);
   };
 
-  const build = function build(args) {
-    return spawnSync('build-storybook', args);
+  const build = function build() {
+    // const cli = path.resolve(__dirname, '../../node_modules/@storybook/react/bin/build');
+    // const command = `node ${cli}`;
+
+    // return execSync(`${command} ${_.join(args, ' ')}`);
+    return execSync(`build-storybook ${_.join(args, ' ')}`);
   };
 
-  const args = defaultOptions.concat(options);
+  const {
+    action: optAction,
+  } = options;
+
+  const action = optAction;
+  const promise = Promise.resolve();
 
   switch (action) {
-    case 'buld':
-      return build(args);
-    case 'start':
+    case 'BUILD':
+      return promise.then(() => build());
+    case 'START':
     default:
-      return start(portBook, args);
+      return promise.then(() => run());
   }
-}
+};

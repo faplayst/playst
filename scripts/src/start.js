@@ -21,8 +21,21 @@
  * SOFTWARE.
  */
 
-import storybook from './tasks/storybook';
-
 export default function start() {
-  return storybook();
+  let isFail = false;
+
+  const run = function run(task) {
+    return Promise.resolve()
+      .then(() => !isFail && Promise.resolve()
+        .then(() => require(`./tasks/${task}`)({
+          action: 'START',
+          argv: process.argv,
+        }))
+        .catch((e) => {
+          isFail = true;
+          console.log(e);
+        }));
+  };
+
+  return Promise.resolve().then(() => run('storybook'));
 }

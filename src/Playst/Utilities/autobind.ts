@@ -26,13 +26,13 @@
  * so that they can be used in scenarios that simply require a function callback.
  */
 // tslint:disable-next-line:no-any
-export function autobind<T extends Function>(target: any, key: string, descriptor: TypedPropertyDescriptor<T>): {
+export function autobind<T extends () => any>(_target: any, key: string, descriptor: TypedPropertyDescriptor<T>): {
   configurable: boolean;
   get(): T;
   // tslint:disable-next-line:no-any
   set(newValue: any): void;
 } | void {
-  let fn = descriptor.value;
+  const fn = descriptor.value;
 
   let defining = false;
 
@@ -40,20 +40,22 @@ export function autobind<T extends Function>(target: any, key: string, descripto
     configurable: true,
 
     get(): T {
-      if (defining || (fn && this === fn.prototype) || this.hasOwnProperty(key)) {
+      if (defining || (typeof (fn) !== "undefined" && this === fn.prototype) || this.hasOwnProperty(key)) {
         return fn as T;
       }
 
       // Bind method only once, and update the property to return the bound value from now on
-      let fnBound = fn && fn.bind(this);
+      const fnBound = typeof(fn) !== "undefined" && fn.bind(this);
 
       defining = true;
+
       Object.defineProperty(this, key, {
         configurable: true,
-        writable: true,
         enumerable: true,
-        value: fnBound
+        value: fnBound,
+        writable: true,
       });
+
       defining = false;
 
       return fnBound;
@@ -63,10 +65,10 @@ export function autobind<T extends Function>(target: any, key: string, descripto
     set(newValue: any): void {
       Object.defineProperty(this, key, {
         configurable: true,
-        writable: true,
         enumerable: true,
-        value: newValue
+        value: newValue,
+        writable: true,
       });
-    }
+    },
   };
 }

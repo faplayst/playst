@@ -21,9 +21,10 @@
  * SOFTWARE.
  */
 
-import React from "react";
-import { Component, Props } from "@playst/common";
+import { autobind } from "../Utilities";
 import { Button } from "./Button";
+import { Component, Props } from "@playst/common";
+import React from "react";
 
 export enum ButtonType {
   Default = 0,
@@ -54,6 +55,7 @@ export abstract class AbstractButton extends Component<IButtonProps, {}> impleme
   }
 
   // #region Events
+  @autobind
   private _onClick(event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
     const { onClick } = this.props;
 
@@ -65,6 +67,7 @@ export abstract class AbstractButton extends Component<IButtonProps, {}> impleme
     event.stopPropagation();
   }
 
+  @autobind
   private _onToggle(): void {
     const { menuProps } = this.props;
     let currentMenuProps = this.state.menuProps;

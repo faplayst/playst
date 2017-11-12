@@ -21,10 +21,10 @@
  * SOFTWARE.
  */
 
-import { autobind } from "../Utilities";
-import { Button } from "./Button";
 import { Component, Props } from "@playst/common";
-import React from "react";
+// import React from "react";
+// import { autobind } from "../Utilities";
+import { Button } from "./Button";
 
 export enum ButtonType {
   Default = 0,
@@ -37,11 +37,15 @@ export interface IButton {
 
 export interface IButtonProps extends Props.IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
   buttonType?: ButtonType;
-  onClick?: (event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void;
+  // onClick?: (event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void;
   text?: string;
 }
 
-export abstract class AbstractButton extends Component<IButtonProps, {}> implements IButton {
+export interface IButtonState {
+  isActive?: boolean;
+}
+
+export abstract class AbstractButton extends Component<IButtonProps, IButtonState> implements IButton {
   private _element: HTMLElement;
 
   constructor(props: IButtonProps) {
@@ -54,24 +58,24 @@ export abstract class AbstractButton extends Component<IButtonProps, {}> impleme
     this._element.focus();
   }
 
-  // #region Events
-  @autobind
-  private _onClick(event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
-    const { onClick } = this.props;
+  // // #region Events
+  // @autobind
+  // private _onClick(event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
+  //   const { onClick } = this.props;
 
-    onClick && onClick(event, this);
+  //   onClick && onClick(event, this);
 
-    !event.defaultPrevented && this._onToggle();
+  //   !event.defaultPrevented && this._onToggle();
 
-    event.preventDefault();
-    event.stopPropagation();
-  }
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  // }
 
-  @autobind
-  private _onToggle(): void {
-    const { menuProps } = this.props;
-    let currentMenuProps = this.state.menuProps;
-    this.setState({ menuProps: currentMenuProps ? null : menuProps });
-  }
-  // #endregion
+  // @autobind
+  // private _onToggle(): void {
+  //   const { menuProps } = this.props;
+  //   let currentMenuProps = this.state.menuProps;
+  //   this.setState({ menuProps: currentMenuProps ? null : menuProps });
+  // }
+  // // #endregion
 }

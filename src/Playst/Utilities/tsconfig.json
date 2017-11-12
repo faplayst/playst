@@ -9,10 +9,11 @@
       "node"
     ]
   },
-  "exclude": [
-    "./*/node_modules"
-  ],
   "include": [
     "./**/*.ts*"
+  ],
+  "exclude": [
+    "node_modules",
+    "./*/__stories__"
   ]
 }

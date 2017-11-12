@@ -21,7 +21,4 @@
  * SOFTWARE.
  */
 
-export { default as Common } from "./Common";
-export { default as Components } from "./Components";
-
-export * from "./Utilities";
+export * from "./Utilities/index";

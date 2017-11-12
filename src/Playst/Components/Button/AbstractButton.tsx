@@ -28,6 +28,7 @@ import { Button } from "./Button";
 export enum ButtonType {
   Default = 0,
   Primary = 1,
+  Flex = 2,
 }
 
 export enum ElementType {

@@ -8,7 +8,7 @@
     {
       "packageName": "@playst/babel-preset",
       "projectFolder": "common/config/babel",
-      "shouldPublish": false
+      "shouldPublish": true
     },
     {
       "packageName": "@playst/task",
@@ -23,12 +23,17 @@
     {
       "packageName": "@playst/common",
       "projectFolder": "src/Playst/Common",
-      "shouldPublish": false
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@playst/utilities",
+      "projectFolder": "src/Playst/Utilities",
+      "shouldPublish": true
     },
     {
       "packageName": "@playst/components",
       "projectFolder": "src/Playst/Components",
-      "shouldPublish": false
+      "shouldPublish": true
     }
   ]
 }

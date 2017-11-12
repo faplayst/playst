@@ -21,8 +21,13 @@
  * SOFTWARE.
  */
 
-export * from "./AbstractButton";
-export * from "./Button";
-export { default as DefaultButton } from "./DefaultButton/DefaultButton";
-export { default as FlexButton } from "./FlexButton/FlexButton";
-export { default as PrimaryButton } from "./PrimaryButton/PrimaryButton";
+import * as React from "react";
+import { Button } from "../Button";
+
+export default class FlexButton extends Button {
+  public render() {
+    return (
+      <Button {...this.props} />
+    );
+  }
+}

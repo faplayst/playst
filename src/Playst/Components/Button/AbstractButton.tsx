@@ -69,12 +69,12 @@ export abstract class AbstractButton extends Component<IButtonProps, IButtonStat
 
   protected element(props: IButtonProps, type?: ElementType): JSX.Element {
     return React.createElement(
-      this._tag(type),
+      this._node(type),
       props,
     );
   }
 
-  private _tag(type?: ElementType): string {
+  private _node(type?: ElementType): string {
     if (!this.isAnchor()) {
       switch (type) {
         case ElementType.Anchor: return "a";

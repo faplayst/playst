@@ -21,12 +21,13 @@
  * SOFTWARE.
  */
 
-import { AbstractButton } from "../AbstractButton";
+import * as React from "react";
+import { Button } from "../Button";
 
-export default class PrimaryButton extends AbstractButton {
+export default class PrimaryButton extends Button {
   public render() {
     return (
-      <AbstractButton {...this.props} />
+      <Button {...this.props} />
     );
   }
 }

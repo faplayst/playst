@@ -22,8 +22,7 @@
  */
 
 import { Component, Props } from "@playst/common";
-// import React from "react";
-// import { autobind } from "../Utilities";
+import * as React from "react";
 import { Button } from "./Button";
 
 export enum ButtonType {
@@ -31,13 +30,19 @@ export enum ButtonType {
   Primary = 1,
 }
 
+export enum ElementType {
+  Button = 0,
+  Anchor = 1,
+}
+
 export interface IButton {
   focus: () => void;
 }
 
-export interface IButtonProps extends Props.IComponentProps<IButton, HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
+export interface IButtonProps extends Props.IComponentProps<IButton,
+HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
   buttonType?: ButtonType;
-  // onClick?: (event?: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>, button?: IButtonProps) => void;
+  href?: string;
   text?: string;
 }
 
@@ -56,6 +61,29 @@ export abstract class AbstractButton extends Component<IButtonProps, IButtonStat
 
   public focus(): void {
     this._element.focus();
+  }
+
+  public isAnchor(): boolean {
+    return typeof (this.props.href) !== "undefined";
+  }
+
+  protected element(props: IButtonProps, type?: ElementType): JSX.Element {
+    return React.createElement(
+      this._tag(type),
+      props,
+    );
+  }
+
+  private _tag(type?: ElementType): string {
+    if (!this.isAnchor()) {
+      switch (type) {
+        case ElementType.Anchor: return "a";
+        case ElementType.Button:
+        default: return "button";
+      }
+    }
+
+    return "a";
   }
 
   // // #region Events

@@ -26,7 +26,7 @@ import clean from './clean';
 import gulp from 'gulp';
 import start from './start';
 
-gulp.task('build', () => {
+gulp.task('build', ['clean'], () => {
   build([]);
 });
 

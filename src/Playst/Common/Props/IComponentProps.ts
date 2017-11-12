@@ -22,7 +22,8 @@
  */
 
 import { AllHTMLAttributes, ReactNode } from "react";
+import IProps from "./IProps";
 
-export default interface IComponentProps<T, TReference> extends AllHTMLAttributes<HTMLElement | T> {
+export default interface IComponentProps<T, TReference> extends AllHTMLAttributes<HTMLElement | T>, IProps {
   reference?: (ref: ReactNode | TReference | null) => (void | ReactNode);
 }

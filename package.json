@@ -75,11 +75,6 @@
     "lint:task": "cd scripts && npm run lint",
     "prebuild:task": "cd scripts && npm run prebuild",
     "pretest:task": "cd scripts && npm run pretest",
-    "rush:install": "node node_modules/@microsoft/rush/bin/rush install -c",
-    "rush:build": "node node_modules/@microsoft/rush/bin/rush build --verbose",
-    "rush:build:fabric": "node node_modules/@microsoft/rush/bin/rush build --to office-ui-fabric-react --verbose",
-    "rush:rebuild": "node node_modules/@microsoft/rush/bin/rush rebuild --production --verbose",
-    "rush:rebuild:fast": "node node_modules/@microsoft/rush/bin/rush rebuild --verbose",
     "start": "./scripts/bin/task run start"
   },
   "jest": {

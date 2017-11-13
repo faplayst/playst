@@ -1,6 +1,6 @@
 {
   "name": "playst",
-  "version": "0.0.0-Placeholder",
+  "version": "0.0.0-placeholder",
   "description": "a Playst UI toolkit for building web.",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
   "private": true,
@@ -40,6 +40,7 @@
     "glob": "^7.1.2",
     "glob-loader": "^0.3.0",
     "jest": "^21.2.1",
+    "lerna": "^2.5.1",
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

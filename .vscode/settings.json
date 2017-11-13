@@ -1,0 +1,88 @@
+{
+  // Editor
+
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+  "editor.detectIndentation": false,
+  // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
+  "editor.formatOnSave": false,
+  // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  "editor.insertSpaces": true,
+  // Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
+  "editor.renderWhitespace": "all",
+  // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+  "editor.tabSize": 2,
+  // Controls how lines should wrap. Can be:
+  //  - 'off' (disable wrapping),
+  //  - 'on' (viewport wrapping),
+  //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
+  //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+  "editor.wordWrap": "wordWrapColumn",
+  // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
+  "editor.wordWrapColumn": 120,
+
+  // eslint
+
+  // Controls whether eslint is enabled for JavaScript files or not.
+  "eslint.enable": true,
+  // Turns auto fix on save on or off.
+  "eslint.autoFixOnSave": false,
+  // Working directories
+  "eslint.workingDirectories": [
+    "./common/config/babel",
+    "./common/config/eslint",
+    "./scripts"
+  ],
+
+  // files
+
+  // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/coverage": true,
+    "**/*.scss.ts": true
+  },
+  // When enabled, will trim trailing whitespace when saving a file.
+  "files.trimTrailingWhitespace": true,
+  // Configure glob patterns of file paths to exclude from file watching. Patterns must match on absolute paths (i.e. prefix with ** or the full path to match properly). Changing this setting requires a restart. When you experience Code consuming lots of cpu time on startup, you can exclude large folders to reduce the initial load.
+  "files.watcherExclude": {
+    "**/*.scss.ts": true,
+    "**/.git": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/lib": true,
+    "**/lib-amd": true,
+    "**/lib-es2015": true,
+    "**/node_modules": true,
+    "**/temp": true
+  },
+
+  // search
+
+  // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/lib": true,
+    "**/lib-amd": true,
+    "**/lib-es2015": true,
+    "**/dist": true,
+    "**/*.scss.ts": true,
+    "common": true
+  },
+
+  // tslint
+
+  // Control whether tslint is enabled for TypeScript files or not.
+  "tslint.enable": true,
+  // Turns auto fix on save on or off, or defines which rules (e.g. `no-var-keyword`) to auto fix on save.
+  "tslint.autoFixOnSave": false,
+  // An additional rules directory
+  "tslint.rulesDirectory": "./scripts/node_modules/tslint-microsoft-contrib",
+
+  // typescript
+
+  // Defines space handling after opening and before closing non empty braces. Requires TypeScript >= 2.3.0.
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  // Specifies the folder path containing the tsserver and lib*.d.ts files to use.
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}

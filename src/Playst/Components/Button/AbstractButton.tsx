@@ -21,10 +21,10 @@
  * SOFTWARE.
  */
 
-import { Component, Func, Props  } from "@playst/common";
+import { Component, IBindFunction, IComponentProps  } from "@playst/common";
 import * as React from "react";
-import { autobind } from "../Utilities";
-import { Button } from "./Button";
+// import { autobind } from "../Utilities";
+import Button from "./Button";
 
 export enum ButtonType {
   Default = 0,
@@ -41,13 +41,13 @@ export interface IButton {
   focus: () => void;
 }
 
-export interface IButtonProps extends Props.IComponentProps<IButton,
+export interface IButtonProps extends IComponentProps<IButton,
   HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
   buttonType?: ButtonType;
   elementType?: ElementType;
   href?: string;
-  onBindChildElement?: Func.IBindFunction<IButtonProps>;
-  onBindTextElement?: Func.IBindFunction<IButtonProps>;
+  onBindChildElement?: IBindFunction<IButtonProps>;
+  onBindTextElement?: IBindFunction<IButtonProps>;
   text?: string;
 }
 
@@ -85,51 +85,51 @@ export abstract class AbstractButton extends Component<IButtonProps, IButtonStat
   }
 
   protected element(buttonProps: IButtonProps): JSX.Element {
-    const props = this.props;
-    const {
-      onBindChildElement = this._onBindChildElement,
-    } = props;
+    // const props = this.props;
+    // const {
+    //   onBindChildElement = this._onBindChildElement,
+    // } = props;
 
     return React.createElement(
       this.node(),
       buttonProps,
-      onBindChildElement(),
+      // onBindChildElement(),
     );
   }
 
-  @autobind
-  private _onBindChildElement(): JSX.Element {
-    const props = this.props;
-    const {
-      onBindTextElement = this._onBindTextElement,
-    } = props;
+  // @autobind
+  // private _onBindChildElement(): JSX.Element {
+  //   const props = this.props;
+  //   const {
+  //     onBindTextElement = this._onBindTextElement,
+  //   } = props;
 
-    return React.createElement(
-      "div" as any,
-      { className: "same" },
-      onBindTextElement(),
-    );
-  }
+  //   return React.createElement(
+  //     "div" as any,
+  //     { className: "same" },
+  //     onBindTextElement(),
+  //   );
+  // }
 
-  @autobind
-  private _onBindTextElement(): JSX.Element | null {
-    const props = this.props;
+  // @autobind
+  // private _onBindTextElement(): JSX.Element | null {
+  //   const props = this.props;
 
-    const { children } = props;
-    let { text } = props;
+  //   const { children } = props;
+  //   let { text } = props;
 
-    if (text === undefined && typeof (children) === "string") {
-      text = children;
-    }
+  //   if (text === undefined && typeof (children) === "string") {
+  //     text = children;
+  //   }
 
-    if (typeof(text) !== "undefined") {
-      return (
-        <div>
-          {text}
-        </div>
-      );
-    }
+  //   if (typeof(text) !== "undefined") {
+  //     return (
+  //       <div>
+  //         {text}
+  //       </div>
+  //     );
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
 }

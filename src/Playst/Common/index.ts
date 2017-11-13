@@ -22,5 +22,5 @@
  */
 
 export { default as Component } from "./Component";
-export { default as Func } from "./Func";
-export { default as Props } from "./Props";
+export * from "./Func";
+export * from "./Props";

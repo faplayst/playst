@@ -20,9 +20,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+// import Button from "./Button";
 
 export * from "./AbstractButton";
-export * from "./Button";
+export { default as Button } from "./Button";
 export { default as DefaultButton } from "./DefaultButton/DefaultButton";
 export { default as FlexButton } from "./FlexButton/FlexButton";
 export { default as PrimaryButton } from "./PrimaryButton/PrimaryButton";

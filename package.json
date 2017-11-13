@@ -23,26 +23,29 @@
   "files": [
     "lib"
   ],
-  "workspaces": [
-    "src/Playst/*"
-  ],
   "devDependencies": {
     "@microsoft/rush": "^4.0.0",
     "@storybook/addon-actions": "^3.2.14",
     "@storybook/addon-links": "^3.2.14",
+    "@storybook/addon-storyshots": "^3.2.15",
     "@storybook/react": "^3.2.14",
+    "@types/jest": "^21.1.6",
     "@types/node": "^8.0.47",
     "@types/react": "^15.6.6",
     "@types/react-dom": "^16.0.2",
+    "@types/react-test-renderer": "^16.0.0",
+    "@types/storybook__react": "^3.0.5",
     "@types/webpack": "^3.0.14",
-    "eslint": "^4.9.0",
+    "awesome-typescript-loader": "^3.3.0",
     "file-loader": "^1.1.5",
     "glob": "^7.1.2",
     "glob-loader": "^0.3.0",
-    "modify-babel-preset": "^3.2.1",
+    "jest": "^21.2.1",
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.1.0",
+    "ts-jest": "^21.2.2",
     "ts-loader": "^3.1.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
@@ -78,5 +81,22 @@
     "rush:rebuild": "node node_modules/@microsoft/rush/bin/rush rebuild --production --verbose",
     "rush:rebuild:fast": "node node_modules/@microsoft/rush/bin/rush rebuild --verbose",
     "start": "./scripts/bin/task run start"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "mapCoverage": true,
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/"
+    ],
+    "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }

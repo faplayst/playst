@@ -10,7 +10,7 @@ $ npm install --save-dev @playst/babel-preset
 
 ## Usage
 
-### Via `.babelrc`
+### By using `.babelrc`
 
 **.babelrc**
 
@@ -20,16 +20,8 @@ $ npm install --save-dev @playst/babel-preset
 }
 ```
 
-### Via CLI
+### By using CLI
 
 ```sh
 $ babel script.js --presets @playst/babel-preset
-```
-
-### Via Node API
-
-```javascript
-require("babel-core").transform("code", {
-  presets: ["@playst/babel-preset"]
-});
 ```

@@ -21,4 +21,4 @@
  * SOFTWARE.
  */
 
-export { default as components } from "./Components/index";
+export * from "./Components/index";

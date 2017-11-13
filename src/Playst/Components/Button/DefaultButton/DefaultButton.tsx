@@ -22,7 +22,7 @@
  */
 
 import * as React from "react";
-import { Button } from "../Button";
+import Button from "../Button";
 
 export default class DefaultButton extends Button {
   public render() {

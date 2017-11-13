@@ -21,8 +21,9 @@
  * SOFTWARE.
  */
 
-import { Component, Props } from "@playst/common";
+import { Component, Func, Props  } from "@playst/common";
 import * as React from "react";
+import { autobind } from "../Utilities";
 import { Button } from "./Button";
 
 export enum ButtonType {
@@ -41,9 +42,12 @@ export interface IButton {
 }
 
 export interface IButtonProps extends Props.IComponentProps<IButton,
-HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
+  HTMLAnchorElement | HTMLButtonElement | AbstractButton | Button> {
   buttonType?: ButtonType;
+  elementType?: ElementType;
   href?: string;
+  onBindChildElement?: Func.IBindFunction<IButtonProps>;
+  onBindTextElement?: Func.IBindFunction<IButtonProps>;
   text?: string;
 }
 
@@ -64,47 +68,68 @@ export abstract class AbstractButton extends Component<IButtonProps, IButtonStat
     this._element.focus();
   }
 
-  public isAnchor(): boolean {
+  protected isAnchor(): boolean {
     return typeof (this.props.href) !== "undefined";
   }
 
-  protected element(props: IButtonProps, type?: ElementType): JSX.Element {
+  protected elementType(): ElementType {
+    return this.isAnchor() ? ElementType.Anchor : ElementType.Button;
+  }
+
+  protected node(): string {
+    switch (this.elementType()) {
+      case ElementType.Anchor: return "a";
+      case ElementType.Button:
+      default: return "button";
+    }
+  }
+
+  protected element(buttonProps: IButtonProps): JSX.Element {
+    const props = this.props;
+    const {
+      onBindChildElement = this._onBindChildElement,
+    } = props;
+
     return React.createElement(
-      this._node(type),
-      props,
+      this.node(),
+      buttonProps,
+      onBindChildElement(),
     );
   }
 
-  private _node(type?: ElementType): string {
-    if (!this.isAnchor()) {
-      switch (type) {
-        case ElementType.Anchor: return "a";
-        case ElementType.Button:
-        default: return "button";
-      }
-    }
+  @autobind
+  private _onBindChildElement(): JSX.Element {
+    const props = this.props;
+    const {
+      onBindTextElement = this._onBindTextElement,
+    } = props;
 
-    return "a";
+    return React.createElement(
+      "div" as any,
+      { className: "same" },
+      onBindTextElement(),
+    );
   }
 
-  // // #region Events
-  // @autobind
-  // private _onClick(event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
-  //   const { onClick } = this.props;
+  @autobind
+  private _onBindTextElement(): JSX.Element | null {
+    const props = this.props;
 
-  //   onClick && onClick(event, this);
+    const { children } = props;
+    let { text } = props;
 
-  //   !event.defaultPrevented && this._onToggle();
+    if (text === undefined && typeof (children) === "string") {
+      text = children;
+    }
 
-  //   event.preventDefault();
-  //   event.stopPropagation();
-  // }
+    if (typeof(text) !== "undefined") {
+      return (
+        <div>
+          {text}
+        </div>
+      );
+    }
 
-  // @autobind
-  // private _onToggle(): void {
-  //   const { menuProps } = this.props;
-  //   let currentMenuProps = this.state.menuProps;
-  //   this.setState({ menuProps: currentMenuProps ? null : menuProps });
-  // }
-  // // #endregion
+    return null;
+  }
 }

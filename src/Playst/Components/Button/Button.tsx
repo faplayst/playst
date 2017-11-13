@@ -22,6 +22,7 @@
  */
 
 import { AbstractButton, IButtonProps } from "./AbstractButton";
+
 export class Button extends AbstractButton {
   constructor(props: IButtonProps) {
     super(props);

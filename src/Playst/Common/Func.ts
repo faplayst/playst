@@ -21,5 +21,4 @@
  * SOFTWARE.
  */
 
-export * from "./autobind";
-export * from "./element";
+export { default as IBindFunction } from "./Functions/IBindFunction";

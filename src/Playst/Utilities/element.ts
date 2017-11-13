@@ -21,5 +21,15 @@
  * SOFTWARE.
  */
 
-export * from "./autobind";
-export * from "./element";
+/**
+ * Autobind is a utility for binding methods in a class. This simplifies tagging methods as being "bound" to the this pointer
+ * so that they can be used in scenarios that simply require a function callback.
+ */
+import * as React from "react";
+
+export default function element(
+  type: "input",
+  props?: React.InputHTMLAttributes<HTMLInputElement> & React.ClassAttributes<HTMLInputElement>,
+  ...children: React.ReactNode[]): React.DetailedReactHTMLElement<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+  return React.createElement(type, props, ...children);
+}

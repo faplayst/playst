@@ -1,20 +1,8 @@
 {
   "root": true,
-  "extends": "airbnb-base/legacy",
+  "extends": "@playst/eslint-config/legacy",
   "rules": {
     "global-require": 0,
-    "no-var": 0,
-    "strict": [
-      "error",
-      "global"
-    ]
-  },
-  "parserOptions": {
-    "ecmaVersion": 5,
-    "sourceType": "script"
-  },
-  "ecmaFeatures": {
-    "defaultParams": true,
-    "restParams": true
+    "no-var": 0
   }
 }

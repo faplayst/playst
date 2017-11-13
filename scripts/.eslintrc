@@ -1,38 +1,42 @@
 {
-  "extends": "airbnb",
+  "extends": "@playst/eslint-config",
   "root": true,
   "env": {
     "node": true,
     "mocha": true
   },
   "rules": {
+    "compat/compat": 0,
     "id-length": 0,
     "global-require": 0,
-    "no-console": 0,
     "import/no-dynamic-require": 0,
+    "import/first": 0,
     "new-cap": [2, {
       "capIsNewExceptions": ["AND"]
     }],
+    "no-console": 0,
+    "no-underscore-dangle": [
+      2,
+      {
+        "allowAfterThis": true,
+        "allow": [
+          "_context",
+          "_currentElement",
+          "_instance",
+          "_reactInternalComponent",
+          "_reactInternalInstance",
+          "_renderedChildren",
+          "_renderedComponent",
+          "_renderedNodeType",
+          "_state",
+          "_store",
+          "_stringText",
+        ]
+      }
+    ],
     "react/jsx-pascal-case": [2, {
       "allowAllCaps": true
     }],
-    "react/no-find-dom-node": 1,
-    "import/first": 0,
-    "no-underscore-dangle": [2, {
-      "allowAfterThis": true,
-      "allow": [
-        "_context",
-        "_currentElement",
-        "_instance",
-        "_reactInternalComponent",
-        "_reactInternalInstance",
-        "_renderedChildren",
-        "_renderedComponent",
-        "_renderedNodeType",
-        "_state",
-        "_store",
-        "_stringText",
-      ]
-    }]
+    "react/no-find-dom-node": 1
   }
 }

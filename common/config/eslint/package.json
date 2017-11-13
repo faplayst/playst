@@ -1,6 +1,6 @@
 {
   "name": "@playst/eslint-config",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "a basic eslint configuration for Playst.",
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
@@ -17,10 +17,17 @@
     "javascript",
     "styleguide"
   ],
-  "devDependencies": {
-    "babel-eslint": "^8.0.2",
-    "babel-runtime": "^6.26.0",
-    "eslint": "^4.11.0",
+  "scripts": {
+    "build": "npm run pretest",
+    "clean": "node -v",
+    "prelint": "editorconfig-tools check *",
+    "lint": "eslint .",
+    "tests-only": "babel-tape-runner ./test/test-*.js",
+    "prepublish": "(in-install || eslint-find-rules --unused) && (not-in-publish || npm test) && safe-publish-latest",
+    "pretest": "npm run --silent lint",
+    "test": "npm run --silent tests-only"
+  },
+  "dependencies": {
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-compat": "^2.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -28,9 +35,21 @@
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-react": "^7.4.0"
   },
+  "devDependencies": {
+    "@playst/babel-preset": "^0.0.3",
+    "babel-eslint": "^8.0.2",
+    "babel-runtime": "^6.26.0",
+    "babel-tape-runner": "^2.0.1",
+    "editorconfig-tools": "^0.1.1",
+    "eslint": "^4.11.0",
+    "eslint-find-rules": "^3.1.1",
+    "in-publish": "^2.0.0",
+    "react": "^16.1.0",
+    "safe-publish-latest": "^1.1.1",
+    "tape": "^4.8.0"
+  },
   "peerDependencies": {
-    "eslint": "^4.11.0 || ^4.9.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint": "^4.11.0 || ^4.9.0"
   },
   "engines": {
     "node": ">= 4"

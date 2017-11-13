@@ -1,6 +1,6 @@
 {
   "name": "@playst/babel-preset",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "a Playst's babel preset for transforming JavaScript.",
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
@@ -37,8 +37,8 @@
     "object.assign": "^4.0.4"
   },
   "devDependencies": {
+    "@playst/eslint-config": "^0.0.6",
     "eslint": "^4.10.0",
-    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
   },
   "bugs": {

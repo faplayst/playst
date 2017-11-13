@@ -42,6 +42,8 @@ module.exports = {
       },
     ],
 
+    'import/exports-last': 'off',
+
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md
     // Allow webpack loader syntax in imports.
     'import/no-webpack-loader-syntax': 'off',

@@ -24,7 +24,6 @@
     "lib"
   ],
   "devDependencies": {
-    "@microsoft/rush": "^4.0.0",
     "@storybook/addon-actions": "^3.2.14",
     "@storybook/addon-links": "^3.2.14",
     "@storybook/addon-storyshots": "^3.2.15",

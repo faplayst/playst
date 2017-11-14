@@ -21,6 +21,7 @@
  * SOFTWARE.
  */
 
+// package:replace:@playst/common
 import { Component, IBindFunction, IComponentProps  } from "@playst/common";
 import * as React from "react";
 // import { autobind } from "../Utilities";

@@ -24,6 +24,6 @@
 import * as React from "react";
 import IProps from "./IProps";
 
-export default interface IActionProps extends IProps {
+export default interface IActionProps extends IProps<{}> {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }

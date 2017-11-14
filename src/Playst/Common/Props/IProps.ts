@@ -21,6 +21,8 @@
  * SOFTWARE.
  */
 
-export default interface IProps {
+import { AllHTMLAttributes } from "react";
+
+export default interface IProps<T> extends AllHTMLAttributes<HTMLElement | T> {
   className?: string;
 }

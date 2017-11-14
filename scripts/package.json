@@ -20,7 +20,7 @@
     "pretest": "npm run lint"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
+    "babel-runtime": "^6.23.0",
     "chalk": "^2.3.0",
     "colorful": "^2.1.0",
     "commander": "^2.11.0",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@playst/babel-preset": "^0.0.8",
     "@playst/eslint-config": "^0.0.8",
-    "@storybook/react": "^3.2.14",
+    "@storybook/react": "^3.2.15",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",

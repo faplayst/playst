@@ -21,9 +21,9 @@
  * SOFTWARE.
  */
 
-import { AllHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 import IProps from "./IProps";
 
-export default interface IComponentProps<T, TReference> extends AllHTMLAttributes<HTMLElement | T>, IProps {
-  reference?: (ref: ReactNode | TReference | null) => (void | ReactNode);
+export default interface IComponentProps<T, TReference> extends IProps<T> {
+  reference?: (ref: ReactNode | TReference | null) => (void | TReference | ReactNode);
 }

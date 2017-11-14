@@ -18,7 +18,7 @@
   //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
   "editor.wordWrap": "wordWrapColumn",
   // Controls the wrapping column of the editor when `editor.wordWrap` is 'wordWrapColumn' or 'bounded'.
-  "editor.wordWrapColumn": 120,
+  "editor.wordWrapColumn": 140,
 
   // eslint
 

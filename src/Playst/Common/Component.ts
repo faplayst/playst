@@ -24,9 +24,9 @@
 import * as React from "react";
 import { IComponentProps } from "./Props";
 
-export default abstract class Component<Props extends IComponentProps<HTMLElement, {}>, Context = {}> extends
-  React.Component<Props, Context> {
-  constructor(props?: Props, context?: Context) {
+export default abstract class Component<P extends IComponentProps<HTMLElement, {}>, C = any> extends
+  React.Component<P, C> {
+  constructor(props?: P, context?: C) {
     super(props, context);
   }
 }

@@ -40,7 +40,7 @@ class Logger {
   }
 
   static endTask(name, task, startTime, errorMessage) {
-    console.log(`${Timer.prefixTime(name)}\
+    console.log(`${Timer.prefixTime(name)} \
     ${Timer.passFail(errorMessage === undefined)}: ${chalk.cyan(task)} (${Timer.duration(startTime)}) ${errorMessage ? (chalk.white(':') + chalk.red(errorMessage)) : ''}`);
   }
 

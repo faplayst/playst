@@ -23,19 +23,25 @@
   "files": [
     "lib"
   ],
+  "workspaces": [
+    "src/Playst/*"
+  ],
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.14",
     "@storybook/addon-links": "^3.2.14",
-    "@storybook/addon-storyshots": "^3.2.15",
+    "@storybook/addon-storyshots": "^3.2.14",
+    "@storybook/addons": "^3.2.14",
+    "@storybook/channels": "^3.2.14",
     "@storybook/react": "^3.2.14",
     "@types/jest": "^21.1.6",
     "@types/node": "^8.0.47",
-    "@types/react": "^15.6.6",
-    "@types/react-dom": "^16.0.2",
+    "@types/react": "^16.0.22",
+    "@types/react-dom": "^16.0.3",
     "@types/react-test-renderer": "^16.0.0",
-    "@types/storybook__react": "^3.0.5",
+    "@types/storybook__react": "^3.0.4",
     "@types/webpack": "^3.0.14",
     "awesome-typescript-loader": "^3.3.0",
+    "babel-core": "^6.26.0",
     "file-loader": "^1.1.5",
     "glob": "^7.1.2",
     "glob-loader": "^0.3.0",
@@ -44,13 +50,13 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.1.0",
+    "react-test-renderer": "^16.0.0",
     "ts-jest": "^21.2.2",
     "ts-loader": "^3.1.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
-    "typescript": "^2.5.3",
+    "typescript": "^2.6.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   },
@@ -58,6 +64,7 @@
     "node": ">=6.1"
   },
   "scripts": {
+    "boot": "lerna exec -- git clean -Xdf . && lerna bootstrap",
     "build": "./scripts/bin/task run build",
     "build:all": "npm-run-all build:task rush:rebuild",
     "build:task": "cd scripts && npm run build",

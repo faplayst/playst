@@ -23,7 +23,7 @@
   dependencies:
     "@storybook/addons" "^3.2.15"
 
-"@storybook/addon-storyshots@^3.2.15":
+"@storybook/addon-storyshots@^3.2.14":
   version "3.2.15"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storyshots/-/addon-storyshots-3.2.15.tgz#98c26e0b429a4da03b0a5eeca12949af09c235b2"
   dependencies:
@@ -32,7 +32,7 @@
     prop-types "^15.6.0"
     read-pkg-up "^3.0.0"
 
-"@storybook/addons@^3.2.15":
+"@storybook/addons@^3.2.14", "@storybook/addons@^3.2.15":
   version "3.2.15"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.2.15.tgz#120fc3e34454b9e6c779f25b945d354511168abc"
 
@@ -44,7 +44,7 @@
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@^3.2.15":
+"@storybook/channels@^3.2.14", "@storybook/channels@^3.2.15":
   version "3.2.15"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.2.15.tgz#c76277d9050e0a0027a9e06edff662db55f391d6"
 
@@ -161,7 +161,7 @@
   version "8.0.50"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.50.tgz#dc545448e128c88c4eec7cd64025fcc3b7604541"
 
-"@types/react-dom@^16.0.2":
+"@types/react-dom@^16.0.3":
   version "16.0.3"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.3.tgz#8accad7eabdab4cca3e1a56f5ccb57de2da0ff64"
   dependencies:
@@ -174,19 +174,15 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.0.18":
+"@types/react@*", "@types/react@^16.0.18", "@types/react@^16.0.22":
   version "16.0.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.22.tgz#19ad106e124aceebd2b4d430a278d55413ee8759"
-
-"@types/react@^15.6.6":
-  version "15.6.6"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.6.6.tgz#21c93d921d63e5c8478ad54b917f52c9abd547e2"
 
 "@types/source-map@*":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@types/source-map/-/source-map-0.5.2.tgz#973459e744cc7445c85b97f770275b479b138e08"
 
-"@types/storybook__react@^3.0.5":
+"@types/storybook__react@^3.0.4":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-3.0.5.tgz#aea4d67146a59de9cf5bacfe8bd24f7abd6128a6"
   dependencies:
@@ -6168,9 +6164,9 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-test-renderer@^16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.1.0.tgz#33a1d3ce896311e0dd1547649b1456ffa7fda415"
+react-test-renderer@^16.0.0:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.1.1.tgz#a05184688d564be799f212449262525d1e350537"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
@@ -7375,7 +7371,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@^2.5.3:
+typescript@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.1.tgz#ef39cdea27abac0b500242d6726ab90e0c846631"
 

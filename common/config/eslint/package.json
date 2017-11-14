@@ -1,6 +1,6 @@
 {
   "name": "@playst/eslint-config",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "a basic eslint configuration for Playst.",
   "main": "index.js",
   "author": "Sopar Sihotang <soparsihotang@gmail.com>",
@@ -32,7 +32,6 @@
     "eslint-plugin-compat": "^2.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-react": "^7.4.0"
   },
   "devDependencies": {
@@ -43,13 +42,15 @@
     "editorconfig-tools": "^0.1.1",
     "eslint": "^4.11.0",
     "eslint-find-rules": "^3.1.1",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
     "in-publish": "^2.0.0",
     "react": "^16.1.0",
     "safe-publish-latest": "^1.1.1",
     "tape": "^4.8.0"
   },
   "peerDependencies": {
-    "eslint": "^4.11.0 || ^4.9.0"
+    "eslint": "^4.11.0 || ^4.9.0",
+    "eslint-plugin-prefer-object-spread": "^1.2.1"
   },
   "engines": {
     "node": ">= 4"

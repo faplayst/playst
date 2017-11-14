@@ -12,8 +12,6 @@
     "start": "node ../../../scripts/bin/task run start"
   },
   "dependencies": {
-    "@playst/common": "^0.0.0-placeholder",
-    "@playst/utilities": "^0.0.0-placeholder",
     "tslib": "^1.8.0"
   },
   "peerDependencies": {

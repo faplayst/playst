@@ -3,17 +3,13 @@
   "compilerOptions": {
     "outDir": "./lib",
     "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
+      "../../../node_modules/@types"
     ]
   },
   "include": [
     "./**/*.ts*"
   ],
   "exclude": [
-    "node_modules",
-    "./*/__stories__"
+    "node_modules"
   ]
 }

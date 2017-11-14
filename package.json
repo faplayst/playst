@@ -24,7 +24,8 @@
     "lib"
   ],
   "workspaces": [
-    "src/Playst/*"
+    "src/*",
+    "packages/*"
   ],
   "dependencies": {
     "tslib": "^1.8.0"

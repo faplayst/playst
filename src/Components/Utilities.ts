@@ -21,4 +21,5 @@
  * SOFTWARE.
  */
 
-export * from "@playst/utilities";
+// package:replace:@playst/utilities
+export * from "../Utilities";

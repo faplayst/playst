@@ -21,10 +21,8 @@
  * SOFTWARE.
  */
 
-import * as React from "react";
-import { IComponentProps } from "./Props";
+declare var process: { env: any };
 
-export default abstract class Component<P extends IComponentProps<HTMLElement, {}>, C = any> extends
-  React.Component<P, C> {
-  public abstract render(): React.ReactElement<P>;
+export function isNodeEnv(env: string) {
+  return typeof process !== "undefined" && process.env && process.env.NODE_ENV === env;
 }

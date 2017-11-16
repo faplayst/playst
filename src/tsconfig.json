@@ -1,5 +1,5 @@
 {
-  "extends": "../common/config/types/base",
+  "extends": "../common/config/types/react",
   "compilerOptions": {
     "outDir": "../../lib",
     "typeRoots": [

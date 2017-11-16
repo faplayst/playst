@@ -23,3 +23,4 @@
 
 export * from "./autobind";
 export * from "./element";
+export * from "./environment";

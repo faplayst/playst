@@ -77,7 +77,7 @@
   // Turns auto fix on save on or off, or defines which rules (e.g. `no-var-keyword`) to auto fix on save.
   "tslint.autoFixOnSave": false,
   // An additional rules directory
-  "tslint.rulesDirectory": "./scripts/node_modules/tslint-microsoft-contrib",
+  // "tslint.rulesDirectory": "./scripts/node_modules/tslint-microsoft-contrib",
 
   // typescript
 

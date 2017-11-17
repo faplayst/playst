@@ -21,11 +21,11 @@
  * SOFTWARE.
  */
 
-/**
- * Callbacks for binding function interface overrideable bind.
- *
- * @public
- */
+  /**
+   * Callbacks for binding function interface overrideable bind.
+   *
+   * @public
+   */
 export default interface IBindFunction<P> {
   // tslint:disable-next-line:callable-types
   (props?: P, defaultBinding?: (props?: P) => JSX.Element | null): JSX.Element | null;

@@ -2,8 +2,8 @@
   "lerna": "2.5.1",
   "npmClient": "yarn",
   "packages": [
-    "common/config/babel",
-    "common/config/eslint",
+    "config/babel",
+    "config/eslint",
     "scripts",
     "src/*",
     "packages/*"

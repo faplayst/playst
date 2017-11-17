@@ -28,8 +28,8 @@
   "eslint.autoFixOnSave": false,
   // Working directories
   "eslint.workingDirectories": [
-    "./common/config/babel",
-    "./common/config/eslint",
+    "./config/babel",
+    "./config/eslint",
     "./scripts"
   ],
 

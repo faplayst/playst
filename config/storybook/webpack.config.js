@@ -8,8 +8,8 @@ module.exports = (baseConfig, env) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     exclude: /node_modules/,
-    include: path.resolve(__dirname, '../src'),
-    loader: require.resolve('ts-loader'),
+    include: path.resolve(__dirname, '../../src'),
+    loader: require.resolve('awesome-typescript-loader'),
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;

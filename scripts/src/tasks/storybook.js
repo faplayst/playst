@@ -28,7 +28,7 @@ import {
 import _ from 'lodash/array';
 
 module.exports = (options = {}) => {
-  const config = path.resolve(process.cwd(), 'common/config/storybook');
+  const config = path.resolve(process.cwd(), 'config/storybook');
 
   let args = _.compact(['-c', `${config}`]);
 

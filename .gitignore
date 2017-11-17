@@ -31,19 +31,21 @@ lib-es2015/
 .idea/
 
 # Log files from building
-*.log
+*.log*
 
 # Packages
-common/**/package-lock.json
+config/**/package-lock.json
 scripts/**/package-lock.json
 src/**/package-lock.json
+packages/**/package-lock.json
 package-lock.json
 
-common/**/package-deps.json
+config/**/package-deps.json
 scripts/**/package-deps.json
 src/**/package-deps.json
+packages/**/package-deps.json
 package-deps.json
 
-common/**/yarn.lock
+config/**/yarn.lock
 scripts/**/yarn.lock
 src/**/yarn.lock

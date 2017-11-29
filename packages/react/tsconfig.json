@@ -1,0 +1,13 @@
+{
+  "extends": "../common/config/types/react",
+  "compilerOptions": {
+    "outDir": "../../lib",
+    "typeRoots": [
+      "../../node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "../../node_modules",
+    "./*/lib"
+  ]
+}
